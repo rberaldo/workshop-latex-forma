@@ -1,4 +1,4 @@
-# Introdução ao LaTeX para o SciELO
+# Introdução ao LaTeX
 
 - Quem eu sou
 - Conteúdo do curso
@@ -983,21 +983,21 @@ autor foque em escrever, ao invés de realizar tarefas tediosas repetidamente.
 O tipo mais simples de macro é o de substituição:
 
 ```latex
-\newcommand{\scielo}{SciELO}
+\newcommand{\forma}{ForMA}
 ```
 
 Declarações do tipo `\newcommand` devem ficar no preâmbulo do documento. Após
-declarar o comando anterior, podemos usar `\scielo` por todo o documento com a
+declarar o comando anterior, podemos usar `\forma` por todo o documento com a
 garantia de que o texto nunca terá erros de digitação.
 
 Ao utilizar esta macro, é necessário incluir um espaço antes do resto do texto,
-ou o espaço em branco será engolido: `\scielo{} texto`. Isso ocorre, pois o
+ou o espaço em branco será engolido: `\forma{} texto`. Isso ocorre, pois o
 LaTeX está esperando um argumento. No entanto, é possível carregar o pacote
 `xspace`, que adiciona esse espaço de maneira automática:
 
 ```latex
 \usepackage{xspace}
-\newcommand{\scielo}{SciELO\xspace}
+\newcommand{\forma}{ForMA\xspace}
 ```
 
 ### Macros com variáveis
@@ -1284,210 +1284,6 @@ acima em [`exemplos/cinema-silencioso.tex`](exemplos/cinema-silencioso.tex).
 Finalmente, iremos resolver
 [`exercicios/estomatol-herediana.tex`](exercicios/estomatol-herediana.tex).
 
-### Escrevendo novos pacotes
-
-É possível reunir todas as macros criadas por um usuário em um arquivo `.sty`
-(do inglês *style*) e utilizar o comando `\usepackage` para carregá-lo. Essa é
-uma prática comum em instituições para permitir a reutilização de código criado
-anteriormente e facilitar a padronização dos documentos. A Wikipédia tem um
-guia excelente sobre o assunto em forma de Wikibook em [*LaTeX/Creating
-Packages*](https://en.wikibooks.org/wiki/LaTeX/Creating_Packages).
-
-## Escrevendo classes
-
-As modificações que fizemos até o momento ficaram limitadas a apenas um
-documento. No entanto, é possível agrupar essas modificações em um arquivo de
-classe (`.cls`), que pode ser distribuído e utilizado por qualquer usuário.
-
-É importante lembrar que, se uma série de modificações independe da classe do
-documento — por exemplo, comandos novos que facilitam a criação de tabelas —
-elas configuram um pacote.
-
-Não há nada de especial na escrita de classes, exceto que os comandos para seus
-autores geralmente começam com letras maiúsculas (`\RequirePackage` ao invés de
-`\usepackage`). Classes básicas são bastante fáceis de criar, porém o assunto —
-como tudo em LaTeX — é extenso. Ao fim dessa seção, há bibliografia mínima
-recomendada.
-
-### Estrutura das classes
-
-Classes geralmente têm quatro seções distintas:
-
-- *Identificação*
-- *Declarações preliminares*
-- *Opções*
-- *Mais declarações*
-
-Vejamos o exemplo [`exemplos/colorida.cls`](exemplos/colorida.cls):
-
-```latex
-% --- Identificação ---
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{colorida}[2017/06/14 Classe de demonstração para o Workshop de
-LaTeX no SciELO]
-```
-
-A primeira linha indica qual a versão requerida para que a classe funciona (no
-momento, LaTeX2e é a versão atual). A segunda indica o nome da classe
-(`colorida`), traz a data e uma breve descrição.
-
-```latex
-% --- Declarações preliminares ---
-
-% Basear na classe article
-\LoadClass[a4paper]{article}
-
-% Comandos que usaremos mais tarde
-\newcommand{\titlecolor}{} % Vazio nesse momento
-
-% Pacotes necessários
-\RequirePackage[l2tabu, orthodox]{nag} % Reclama do uso de pacotes obsoletos
-\RequirePackage{titling}
-\RequirePackage[margin=3cm]{geometry}
-\RequirePackage{color}
-```
-
-A seguir, temos as declarações preliminares. Carregamos a classe `article` como
-base, pois assim não temos que reimplementar todos os comandos que ela provê,
-como `\author`, `\maketitle` e outros. Essa é a estratégia mais comum entre
-escritores de classes: começar com uma classe base e modificá-la como
-necessário.
-
-Enfim, criamos o comando `\titlecolor`, que está vazio no momento mas será
-utilizado mais tarde, além de carregar os pacotes necessários abaixo.
-
-```latex
-% --- Opções ---
-
-% Cores do títulos
-\DeclareOption{red}{%
-  \renewcommand{\titlecolor}{\color{red}}
-}
-\DeclareOption{green}{%
-  \renewcommand{\titlecolor}{\color{green}}
-}
-\DeclareOption{yellow}{%
-  \OptionNotUsed
-}
-% Passar opções desconhecidas para a classe article
-\DeclareOption*{%
-  \PassOptionsToClass{\CurrentOption}{article}%
-}
-% O título será vermelho por padrão
-\ExecuteOptions{red}
-% Processe as opções
-\ProcessOptions\relax
-```
-
-Os próximos comandos lidam com as opções da classe. Usamos `\DeclareOption`
-para definir duas opções, `red` e `green`, que mudam o valor do comando
-`\titlecolor`, que será usado na próxima parte do código. Além disso,
-declaramos uma opção `yellow` que não será utilizada. Como não podemos prever
-que outras opções um usuário pode tentar carregar (como por exemplo `11pt` ou
-`twoside`), passamos o resto das opções para a classe `article` usando o
-comando `\DeclareOption*`.
-
-O comando `\ExecuteOptions{red}` define a opção que será executada por padrão,
-caso o usuário não faça nenhuma escolha. Neste caso, teremos um título
-vermelho. A seguir, `\ProcessOptions` processa as opções escolhidas pelo
-usuário.
-
-```latex
-% --- Mais declarações ---
-\pretitle{%
-  \begin{center}
-    \titlecolor\bfseries\LARGE
-}
-\posttitle{%
-\end{center}
-}
-```
-
-A última parte da classe `colorida` usa os comandos `\pretitle` e `\posttitle`,
-providos pelo pacote `titling`. Configuramos o comando `\titlecolor`
-anteriormente e agora utilizamos ele para dar cor ao título, que será
-centralizado, em negrito e do tamanho `\LARGE`.
-
-Podemos compilar o arquivo
-[`exemplos/escrevendo-classes.tex`](exemplos/escrevendo-classes.tex) com as
-opções `red` ou `green` para ver como a classe altera o resultado final.
-
-### Exemplos e exercícios
-
-Veremos um exemplo da implementação da revista *Galaxia* em
-[`exemplos/galaxia.cls`](exemplos/galaxia.cls).
-
-Além disso, analisar as classes [`gapd`][gapd] e
-[`research_note`][research_note].
-
-[gapd]: https://github.com/RocketshipGames/gapd.cls/
-[research_note]: https://github.com/noaham/research_note_cls/
-
-Finalmente, resolveremos
-[`exercicios/estomatoher.cls`](exercicios/estomatoher.cls), onde
-implementaremos uma classe para a *Rev Estomatol Herediana*.
-
-### A classe `memoir`
-
-Como vimos anteriormente, ao escrever uma classe em LaTeX, é uma boa ideia
-fazer uso do comando `\LoadClass` para carregar as definições de outra classe.
-De outra maneira, teríamos que definir tudo manualmente, como o tamanho das
-fontes, ambientes básicos como `abstract`, entre outras coisas.
-
-O estudo da classe [`memoir`](https://ctan.org/memoir) é recomendado para esse
-fim. Ela inclui uma série de comandos nativos que tornam desnecessário carregar
-muitos outros pacotes.  Para uma introdução à essa classe, recomendamos o
-artigo [“The `memoir` class”][wilson], por Peter Wilson.
-
-[wilson]: https://www.tug.org/pracjourn/2006-3/wilson/wilson.pdf
-
-### Bibliografia básica para escritores de classes
-
-- *The LaTeX Companion*, por Mittelbach e Goossens
-- [Rolling your own Document Class]
-  (https://www.tug.org/pracjourn/2006-4/flynn/)
-- [Minutes in less than hours]
-  (http://tutex.tug.org/pracjourn/2005-4/hefferon/hefferon.pdf)
-- [Writing your own class (ShareLaTeX)]
-  (https://www.sharelatex.com/learn/Writing_your_own_class)
-- [Creating your own class (Wikibooks)]
-  (https://en.wikibooks.org/wiki/LaTeX/Creating_Packages#Creating_your_own_class)
-- Recomendamos, também, a leitura de muitas classes escritas por outras
-  pessoas. Ela são uma ótima fonte de inspiração e soluções que podem ser
-  reutilizadas.
-
-## Conversão de XML para LaTeX
-
-É possível converter um arquivo XML para PDF usando o LaTeX como intermediário.
-Uma das maneiras de se fazer isso é usando o `pandoc`, um programa de linha de
-comando disponível no GNU/Linux.
-
-Em nossos exercícios, usaremos o DocBook, um schema XML bastante popular. O
-`pandoc` tem [plugins para a produção de
-JATS](https://github.com/mfenner/pandoc-jats), porém eles não vem instalados
-por padrão.
-
-Converter um arquivo em DocBook até a versão 4.5 é bastante fácil usando o
-`pandoc`. Vejamos o comando a seguir:
-
-```bash
-pandoc -s -t latex -f docbook exemplo.db -o exemplo.tex
-```
-
-Para realizar a conversão, o `pandoc` utiliza um arquivo de template. No
-Ubuntu, esse arquivo está localizado em
-`/usr/share/pandoc/data/templates/default.latex`. Veremos alguns exemplos
-usando esse template.
-
-Veremos, também, o arquivo [`exemplos/latex.template`](exemplos/latex.template):
-
-```bash
-pandoc -s --template=latex.template -t latex -f docbook conversao-xml.db \
-  -o conversao-xml.pdf
-```
-
-Finalmente, faremos nosso próprio template em
-[`exemplos/latex-minimal.template`](exemplos/latex-minimal.template).
 
 ## Referências
 
