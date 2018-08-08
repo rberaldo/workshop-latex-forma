@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}table\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}centering}
+  \PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}tabular\PYG{n+nb}{\PYGZcb{}\PYGZob{}}lcr\PYG{n+nb}{\PYGZcb{}}
+  1 \PYG{n+nb}{\PYGZam{}} 2 \PYG{n+nb}{\PYGZam{}} 3\PYG{k}{\PYGZbs{}\PYGZbs{}}
+  4 \PYG{n+nb}{\PYGZam{}} 5 \PYG{n+nb}{\PYGZam{}} 6\PYG{k}{\PYGZbs{}\PYGZbs{}}
+  7 \PYG{n+nb}{\PYGZam{}} 8 \PYG{n+nb}{\PYGZam{}} 9
+  \PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}tabular\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}caption}\PYG{n+nb}{\PYGZob{}}Números de 1 a 9\PYG{n+nb}{\PYGZcb{}}
+  \PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}tab:numerosUmNove\PYG{n+nb}{\PYGZcb{}}
+\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}table\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

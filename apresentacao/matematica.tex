@@ -1,0 +1,122 @@
+% Matemática %%%%%%%%%%%%%%
+\section{Matemática}
+
+% Até agora, estávamos no modo de texto. No modo de matemática, o modo como o
+% LaTeX interpreta o que escrever é diferente. Além disso, o modo de matemática
+% é dividido em dois tipos: inline e displayed
+\begin{frame}
+  \frametitle{Matemática: modos do \LaTeX}
+  \LARGE
+  \only<1>{Modo de texto vs.\\ modo de matemática}
+  \only<2>{Modo de matemática:\\ \emph{inline} e \emph{displayed}}
+\end{frame}
+
+% Existem três ambientes para acessar o modo de matemática.
+\begin{frame}[fragile]
+  \frametitle{Matemática: ambientes}
+  \LARGE
+  Três ambientes:\\
+
+  \only<1>{\latexcode{math} ou \latexcode{\( … \)}}
+  \only<2>{\latexcode{displaymath} ou \latexcode{\[ … \]}}
+  \only<3>{\latexcode{equation}}
+\end{frame}
+
+% Há uma infinidade de comandos, pacotes e técnicas para aprender. Cobriremos o
+% básico.
+\begin{frame}
+  \frametitle{Matemática}
+  \LARGE
+  Cobriremos o básico!
+
+  Mais em \url{www.en.wikibooks.org/wiki/LaTEX/Mathematics}
+\end{frame}
+
+% Símbolos em modo matemático
+\begin{frame}[fragile]
+  \frametitle{Matemática: símbolos}
+  \LARGE
+  \latexcode{2 \times 2 = 4}
+  \hfill
+  \( 2 \times 2 = 4 \)
+\end{frame}
+
+% Alfabeto grego
+\begin{frame}[fragile]
+  \frametitle{Matemática: alfabeta grego}
+  \LARGE
+  \latexcode{\alpha, \beta, \pi}
+  \hfill
+  \( \alpha, \beta, \pi \)
+\end{frame}
+
+% Operadores
+\begin{frame}[fragile]
+  \frametitle{Matemática: operadores}
+  \begin{minted}[autogobble,fontsize=\Large,breaklines]{latex}
+    \cos (2\theta) = \cos^2 \theta - \sin^2 \theta
+  \end{minted}
+
+  \LARGE
+  \[ \cos (2\theta) = \cos^2 \theta - \sin^2 \theta \]
+\end{frame}
+
+% Potências e subscritos
+\begin{frame}[fragile]
+  \frametitle{Matemática: potências e subscritos}
+  \LARGE
+
+  \begin{tabular}{r|l}
+    \latexcode{2^8}             & \( 2^8 \)\\
+    \latexcode{a_b}             & \( a_b \)\\
+    \latexcode{2^{32}}          & \( 2^{32} \)\\
+    \latexcode{f(n) = 4n + n^2} & \( f(n) = 4n + n^2 \)
+  \end{tabular}
+\end{frame}
+
+% Frações
+\begin{frame}[fragile]
+  \frametitle{Matemática: frações}
+  \LARGE
+  \begin{minipage}{.45\textwidth}
+    \begin{minted}[autogobble,fontsize=\large,breaklines]{latex}
+    F = G \frac{m_1 m_2}{d^2}
+
+    \frac{\frac{1}{x} + \frac{1}{y}}{y-z}
+    \end{minted}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \[ F = G \frac{m_1 m_2}{d^2} \]
+
+    \[ \frac{\frac{1}{x}+\frac{1}{y}}{y-z} \]
+  \end{minipage}
+\end{frame}
+
+% Raízes
+\begin{frame}[fragile]
+  \frametitle{Matemática: raízes}
+  \LARGE
+  \begin{tabular}{r|l}
+    \latexcode{\sqrt{10^2} = 10}      & \( \sqrt{10^2} = 10 \) \\
+    \latexcode{\sqrt[3]{\frac{a}{b}}} & \( \sqrt[3]{\frac{a}{b}} \)
+  \end{tabular}
+\end{frame}
+
+% Estudar mais exemplos de matemática
+\begin{frame}
+  \frametitle{Matemática: exemplo}
+  \Huge
+  Estudar \filename{exemplos/\\matematica.tex}
+\end{frame}
+
+% Exercício: reproduza essa equação em equacao.tex
+\begin{frame}
+  \frametitle{Matemática: exercício}
+  \LARGE
+  Reproduza em \filename{exercicios/equacao.tex}:
+
+  \begin{equation}
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+  \end{equation}
+\end{frame}

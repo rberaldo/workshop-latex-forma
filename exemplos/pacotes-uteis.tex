@@ -1,0 +1,209 @@
+%
+% pacotes-uteis.tex
+%
+% Workshop de LaTeX do SciELO
+%
+% Demonstra os pacotes:
+% - titling
+% - sectsty
+% - geometry
+% - fancyhdr
+% - tcolorbox
+% - microtype
+%
+
+\documentclass[a4paper]{article}
+% --- pacotes necessários ---
+\usepackage{polyglossia}
+  \setdefaultlanguage{brazil}
+\usepackage{minted}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks,
+  linkcolor={red!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black}
+}
+\usepackage{multicol}
+\usepackage{microtype}
+
+% --- pacotes estudados ---
+% titling: modificar o comando \maketitle
+% \usepackage{titling}
+% opções
+%
+% sectsty: modificar a fonte e posição das seções
+% \usepackage{sectsty}
+% opções
+%
+% geometry: controla margens e tamanhos de página
+% \usepackage{geometry}
+% opções
+%
+% fancyhdr: cabeçalhos e rodapés
+% \usepackage{fancyhdr}
+% opções
+%
+% tcolorbox: cria caixas de texto
+% \usepackage{tcolorbox}
+% opções
+%
+% microtype: controles tipográficos avançados
+\usepackage{microtype}
+
+% --- macros ---
+\newcommand{\code}[1]{\mintinline{latex}{#1}}
+
+% --- título ---
+\title{Pacotes úteis: uma demonstração}
+\author{João da Silva}
+\date{14 de junho}
+
+% --- o documento ---
+\begin{document}
+\frenchspacing
+
+\maketitle
+
+\section{O pacote \code{titling}}
+
+Ao invés de modificar o comando \code{\maketitle}, podemos utilizar o pacote
+\href{https://ctan.org/pkg/titling/}{\code{titling}} e seus comandos para
+modificar o título de nossos artigos.
+
+Os principais comandos são:
+
+\begin{multicols}{2}
+  \begin{itemize}
+    \item \code{\pretitle}
+    \item \code{\posttitle}
+    \item \code{\preauthor}
+    \item \code{\postauthor}
+    \item \code{\predate}
+    \item \code{\postdate}
+  \end{itemize}
+\end{multicols}
+
+Os comandos podem ser modificados para atingir os resultados desejados. Por
+exemplo, para um título alinhado à direta, sem serifas e com a data à esquerda
+e em versaletes:
+
+\begin{minted}[autogobble]{latex}
+\pretitle{\begin{flushright}\LARGE\sffamily}
+\posttitle{\par\end{flushright}\vskip 0.5em}
+\predate{\begin{flushleft}\large\scshape}
+\postdate{\par\end{flushleft}}
+\end{minted}
+
+\section{O pacote \code{sectsty}}
+
+O pacote \href{https://www.ctan.org/pkg/sectsty}{\code{sectsty}} provê maneiras
+de modificar a fonte dos comandos de secionamento do \LaTeX{} (como
+\code{\chapter}, \code{\section}, \code{\subsection} etc.).
+
+Carregando o pacote, ganhamos comandos como \code{\allsectionsfonts}, para
+modificar a fonte de todas as seções, e \code{\sectionfont}, para realizar
+modificações apenas nas fontes de seções.
+
+Se desejarmos, por exemplo, que todas as seções de um determinado documento
+fiquem à direta e sejam serifadas, podemos utilizar o seguinte comando:
+
+\begin{minted}[autogobble]{latex}
+\allsectionsfont{\sffamily\raggedleft}
+\end{minted}
+
+\section{O pacote \code{geometry}}
+
+Mudar o tamanho da página ou margens no \LaTeX{} é uma tarefa bastante fácil
+com o pacote \href{https://www.ctan.org/pkg/geometry}{\code{geometry}}. Para
+mudar todas as margens para \code{2cm}, por exemplo, podemos carregar o pacote
+da seguinte maneira:
+
+\begin{minted}[autogobble]{latex}
+\usepackage[margin=2cm](geometry)
+\end{minted}
+
+O pacote é extremamente versátil e possui um grande número de opções
+pré-configuradas, como por exemplo \code{b5paper}, um tamanho de papel bastante
+utilizado para livros e envelopes.
+
+\section{O pacote \code{fancyhdr}}
+
+É possível mudar o conteúdo do cabeçalho e rodapé dos documentos facilmente
+utilizando o pacote \href{https://www.ctan.org/pkg/fancyhdr}{\code{fancyhdr}}:
+
+\begin{minted}[autogobble]{latex}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\end{minted}
+
+Devemos usar comandos diferentes para controlar o cabeçalho e rodapé em função
+do estilo de impressão que está configurado. Vejamos dois exemplos a seguir, o
+primeiro para documentos impressos em apenas um lado da folha (opção
+\code{oneside}):
+
+\begin{minted}[autogobble]{latex}
+\lhead{} % reseta a parte esquerda do cabeçalho
+\chead{} % reseta a parte direita do cabeçalho
+\rhead{\textbf{The performance of new graduates}}
+\lfoot{From: K. Grant}
+\cfoot{To: Dean A. Smith}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\end{minted}
+
+…e o segundo para documentos impressos em ambos os lados da folha
+(\code{twoside}).
+
+\begin{minted}[autogobble]{latex}
+\fancyhead{} % limpa todos os cabeçalhos
+\fancyhead[RO,LE]{\textbf{The performance of new graduates}}
+\fancyfoot{} % limpa todos os rodapés
+\fancyfoot[LE,RO]{\thepage} % \thepage é o número da página
+\fancyfoot[LO,CE]{From: K. Grant} % LO é significa Left Odd; CE significa
+                                  % Center Even; etc.
+\fancyfoot[CO,RE]{To: Dean A. Smith}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\end{minted}
+
+\section{O pacote \code{tcolorbox}}
+
+O pacote \href{https://www.ctan.org/pkg/tcolorbox}{\code{tcolorbox}} permite a
+criação de caixas de texto coloridas e decoradas, desde muito simples até
+bastante complexas. Elas podem conter um título e podem também ser dividas em
+duas partes, o que é útil para mostrar código e seu output, por exemplo.
+
+A sintaxe é bastante simples e é bastante fácil conseguir efeitos bons com
+poucas opções. O pacote é muito extensível, o que significa que ler a
+documentação e encontrar exemplos é fundamental. A sintaxe básica é reproduzida
+a seguir:
+
+\begin{minted}[autogobble]{latex}
+\begin{tcolorbox}[options]
+…
+\end{tcolorbox}
+\end{minted}
+
+Um exemplo com título, cor de fundo e dividido ao meio:
+
+\begin{minted}[autogobble]{latex}
+\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Meu título]
+  Este é um exemplo de \textbf{tcolorbox}.
+  \tcblower
+  Aqui está a parte de baixo da caixa de texto.
+\end{tcolorbox}
+\end{minted}
+
+\section{O pacote \code{microtype}}
+
+O pacote \href{https://www.ctan.org/pkg/microtype}{\code{microtype}} “provê ao
+\LaTeX{} extensões como protusão de caracteres, expansão de fonte, ajuste entre
+palavras e kerning adicionais.” Ele melhora consideravelmente a disposição das
+fontes no documento, como ilustrado
+\href{http://www.khirevich.com/latex/microtype/}{neste artigo escrito por
+Siarhei Khirevich}. Não é necessário configurá-lo.
+
+\end{document}

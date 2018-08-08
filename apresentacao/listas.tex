@@ -1,0 +1,56 @@
+% Listas %%%%%%%%%%%%%%
+\section{Listas}
+
+% Três tipos de listas inclusos por padrão
+\begin{frame}
+  \frametitle{Listas: três tipos}
+  \LARGE
+  Ambientes: \code{itemize, enumerate} e \code{description}
+\end{frame}
+
+% Anatomia de uma lista
+\begin{frame}[fragile]
+  \frametitle{Listas: sintaxe}
+  \LARGE
+  Ingredientes para carbonara:
+
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+    \begin{itemize}
+      \item Bacon
+      \item Macarrão
+      \item Ovos
+      \item Parmesão
+      \item Pimenta-do-reino
+    \end{itemize}
+  \end{minted}
+\end{frame}
+
+% Existem mais listas no arquivo exemplos/listas.tex
+\begin{frame}
+  \frametitle{Listas: exemplo}
+  \Huge
+  Aprenderemos mais em \filename{exemplos/listas.tex}
+\end{frame}
+
+% Exercício: completar a receita de panqueca com os ingredientes corretos.
+\begin{frame}
+  \frametitle{Listas: exercício}
+  \Huge
+  Resolver \filename{exercicios/receita.tex}
+\end{frame}
+
+% Lista de ingredientes que os participantes devem colocar na receita. Notar a
+% palavra ingrediente, o número sequencial e o parênteses.
+\begin{frame}
+  \frametitle{Listas: exercício}
+  \large
+  \begin{enumerate}[{Ingrediente} 1)]
+    \item 190g de farinha
+    \item 25g de açúcar
+    \item 10g de fermento químico em pó
+    \item 3g de sal\\[1em] … texto …\\[1em]
+    \item 25g de manteiga\\[1em] … texto …\\[1em]
+    \item 330g de leite
+    \item 80g de ovos
+  \end{enumerate}
+\end{frame}

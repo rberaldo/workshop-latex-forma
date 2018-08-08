@@ -1,0 +1,31 @@
+% LaTeX: uma linguagem de marcação %%%%%%%%%%%%%%
+\section[\LaTeX: uma linguagem de marcação]{Linguagem de marcação}
+
+% O LaTeX é uma linguagem de marcação de texto, ou markup
+\begin{frame}
+  \frametitle{\LaTeX: uma linguagem de marcação}
+  \LARGE
+  \only<1>{\LaTeX{} é uma linguagem de \emph{markup}}
+  \only<2>{Você \emph{declara} o documento}
+  \only<3>{O programa segue as instruções}
+  \only<4>{Assim como em \textsc{html},\\ o arquivo fonte é renderizado}
+  \only<5>{Comandos são semânticos}
+\end{frame}
+
+% Se os comandos são semânticos, devem ser fáceis de interpretar. O que os
+% comandos abaixo significam?
+\begin{frame}[fragile]
+  \frametitle{\LaTeX: uma linguagem de marcação}
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+    \tableofcontents
+
+    \section{Introdução}
+  \end{minted}
+\end{frame}
+
+% Arquivos .tex não contém formatação; são texto plano.
+\begin{frame}
+  \frametitle{\LaTeX: uma linguagem de marcação}
+  \LARGE
+  \code{.tex} são arquivos de texto plano
+\end{frame}

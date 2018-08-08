@@ -1,0 +1,67 @@
+%
+% trabalho-normatizado.tex
+%
+% Workshop de LaTeX do SciELO
+%
+% Demonstra:
+% - Como utilizar a classe abnTeX2 para criar uma tese
+% - Organização do texto
+% - Comandos específicos da classe
+% - O comando \input
+%
+
+\documentclass[12pt,oneside,a4paper,english,brazil]{abntex2}
+% Não carregaremos o pacote polyglossia, uma vez que é carregado por padrão
+% pela classe
+\usepackage{microtype,graphicx,hyperref,blindtext,fontspec}
+% Pacote usado para citações:
+\usepackage[alf]{abntex2cite}
+
+% Informações da capa
+\titulo{}
+\autor{}
+\orientador[Orientadora: ]{}
+\data{}
+\instituicao{}
+\tipotrabalho{}
+
+\begin{document}
+\selectlanguage{brazil}
+\frenchspacing
+
+\pretextual
+\imprimircapa
+\imprimirfolhaderosto
+
+% Resumos (adaptado do manual do abntex2)
+% --- resumo em português ---
+\begin{resumo}
+  Resumo em português
+  \vspace{\onelineskip}
+  \noindent
+  \textbf{Palavras-chave}: latex. abntex. editoração de texto.
+\end{resumo}
+% --- resumo em inglês ---
+\begin{resumo}[Abstract]
+  \selectlanguage{english}
+  Abstract in English.
+  \vspace{\onelineskip}
+  \noindent
+  \textbf{Keywords}: latex. abntex. text publishing.
+\end{resumo}
+
+% Para que a ToC seja incluída nas bookmarks do PDF
+\tableofcontents*
+\cleardoublepage
+
+\textual
+\cleardoublepage
+\input{introducao}
+\input{objetivos-justificativa}
+\input{metodologia}
+\input{desenvolvimento}
+\input{conclusao}
+
+\postextual
+\bibliography{trabalho-normatizado}
+\end{document}

@@ -1,0 +1,58 @@
+% Preambulo do documento %%%%%%%%%%%%%%
+\section{Preâmbulo do documento}
+
+% Dar uma olhada no arquivo. Ensinar a distinção entre o preâmbulo e o corpo do
+% documento.
+\begin{frame}
+  \frametitle{Preâmbulo do documento}
+  \LARGE
+  Documentos \LaTeX: preâmbulo e corpo
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Preâmbulo do documento}
+  \LARGE
+  \begin{minted}[autogobble,fontsize=\large,breaklines]{latex}
+  \documentclass[11pt,a4paper,oneside]{article}
+  \end{minted}
+\end{frame}
+
+% Explicar as opções da classe article que escolhi
+\begin{frame}[fragile]
+  \frametitle{Preâmbulo do documento}
+  \LARGE
+  Classes padrão:
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item\code{article}
+      \item\code{report}
+      \item\code{book}
+      \item\code{letter}
+      \item\code{memoir}
+      \item\code{beamer}
+  \end{itemize}
+\end{multicols}
+\end{frame}
+
+% Vejamos quais são as opções de classe mais comuns
+\begin{frame}
+  \frametitle{Preâmbulo do documento}
+  \LARGE
+  Opções de classe comuns:
+  \begin{itemize}
+    \only<1>{\item \code{10pt, 11pt, 12pt}}
+    \only<1>{\item \code{a4paper, a5paper, letterpaper, …}}
+    \only<2>{\item \code{titlepage, notitlepage}}
+    \only<2>{\item \code{twocolumn}}
+    \only<2>{\item \code{twoside, oneside}}
+    \only<3>{\item \code{landscape}}
+    \only<3>{\item \code{openright, openany}}
+    \only<3>{\item \code{draft}}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Preâmbulo do documento}
+  \huge
+  Vejamos \filename{exemplos/artigo.tex}
+\end{frame}

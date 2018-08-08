@@ -1,0 +1,142 @@
+% Macros %%%%%%%%%%%%%%
+\section{Macros}
+
+% Uma das maiores vantagens do LaTeX é sua extensibilidade
+\begin{frame}
+  \frametitle{Macros}
+  \LARGE
+  \LaTeX{} é extensível
+\end{frame}
+
+% O LaTeX é um conjunto de macros para TeX
+\begin{frame}
+  \frametitle{Macros}
+  \LARGE
+  Afinal, \LaTeX{} é um conjunto\\ de macros para o \TeX
+\end{frame}
+
+% Macros são programas que automatizam certas funções
+\begin{frame}
+  \frametitle{Macros}
+  \LARGE
+  Macros automatizam funções
+\end{frame}
+
+% Macros de substituição
+\begin{frame}[fragile]
+  \frametitle{Macros de substituição}
+  \LARGE
+  \latexcode{\newcommand{\scielo}{SciELO}}
+  \vspace{1em}
+
+  Workshop de LaTeX no \latexcode{\scielo{}} em junho.
+\end{frame}
+
+% xspace
+\begin{frame}[fragile]
+  \frametitle{Macros de substituição: o pacote \code{xspace}}
+  \begin{minted}[autogobble,fontsize=\large,breaklines]{latex}
+  \usepackage{xspace}
+  …
+  \newcommand{\scielo}{SciELO\xspace}
+  …
+  Workshop de LaTeX no \scielo em junho.
+  \end{minted}
+\end{frame}
+
+% Macros com variáveis
+\begin{frame}
+  \frametitle{Macros com variáveis}
+  \LARGE
+  Macros como \latexcode{\maketitle} usam variáveis como
+  \latexcode{\@author}
+\end{frame}
+
+% Comandos com @ podem ser acessados após transformar @ em uma letra
+\begin{frame}
+  \frametitle{Macros com variáveis: acessando comandos reservados}
+  \LARGE
+  \latexcode{\makeatletter … \makeatother}
+\end{frame}
+
+% Veremos um exemplo de como isso pode ser usado para redefinir o comando
+% \maketitle
+\begin{frame}[fragile]
+  \frametitle{Macros com variáveis: customizando o
+  \latexcode{\maketitle}}
+  \LARGE
+  Veremos como customizar o \latexcode{\maketitle} usando o comando:
+
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+  \renewcommand{\maketitle}{…}
+  \end{minted}
+\end{frame}
+
+% Macros com argumentos
+\begin{frame}[fragile]
+  \frametitle{Macros com argumentos}
+  \LARGE
+  Macros podem levar argumentos:
+
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+  \textbf{texto}
+  \end{minted}
+\end{frame}
+
+% Sintaxe de macros com argumentos
+\begin{frame}[fragile]
+  \frametitle{Macros com argumentos: sintaxe}
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+  \newcommand{\eng}[1]{%
+    \emph{\textenglish{#1}}%
+  }
+  …
+  \eng{some text in English}
+  \end{minted}
+\end{frame}
+
+% Também é possível definir novos ambientes
+\begin{frame}[fragile]
+  \frametitle{Novos ambientes}
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+  \newenvironment{italics}
+  {\itshape}
+  {}
+  \end{minted}
+\end{frame}
+
+% Exemplos de macros e redefinição do título
+\begin{frame}
+  \frametitle{Macros: exemplos}
+  \huge
+  Estudar \filename{exe\-mplos/ma\-cros.tex}
+\end{frame}
+
+% Vamos aprender a utilizar macros
+\begin{frame}
+  \frametitle{Macros: exercício}
+  \huge
+  Resolver \filename{exercicio/auto\-ma\-ti\-zan\-do.tex}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Macros: exercício: \latexcode{\address} e \latexcode{\telephone}}
+  \LARGE
+  Escrever duas macros, \latexcode{\address} e \latexcode{\telephone}, que
+  expandam para o endereço e telefone do SciELO
+\end{frame}
+
+\begin{frame}
+  \frametitle{Macros: exercício: \latexcode{\email} e \latexcode{\todo}}
+  \LARGE
+  Resultado de \latexcode{\email}: \email{rberaldo@cabaladada.org}
+  \vspace{1em}
+
+  Resultado de \latexcode{\todo}: \todo{texto usando o \latexcode{todo}}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Macros: exercício: mudar o \latexcode{\maketitle}}
+  \LARGE
+  Vamos ao documento mudar o \latexcode{\maketitle} juntos
+\end{frame}

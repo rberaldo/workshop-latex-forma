@@ -1,0 +1,49 @@
+%
+% galaxia-artigo.tex
+%
+% Workshop de LaTeX do SciELO
+%
+% Demonstra:
+% - A utilização da classe galaxia.cls
+%
+
+\documentclass[11pt,a4paper,twoside]{galaxia}
+\usepackage{polyglossia}
+  \setdefaultlanguage{brazil}
+  \setotherlanguage{english}
+\usepackage{blindtext}
+
+\title{O cinema silencioso e o som no Brasil (1894-1920)\thanks{Uma versão
+deste trabalho foi apresentada no GT “Comunicação e Cultura”, da COMPÓS de
+2016. Agradeço os apontamentos dos colegas do evento e em especial de meu
+supervisor de pesquisa, Prof. Eduardo Morettin, visando ao aprimoramento do
+texto.}}
+\author{Danielle Crepaldi Carvalho}
+\issue{34}{jan--abr}{2017}
+\doi{10.1590/1982-255420172808}
+\pages{85}{97}
+
+\begin{document}
+\pagestyle{fancy}
+\frenchspacing
+
+\maketitle
+\thispagestyle{paginaum}
+
+\begin{abstract}{cinema silencioso; história do cinema brasileiro; som e cinema}
+  \blindtext
+\end{abstract}
+
+\selectlanguage{english}
+\begin{abstract}[Keywords]{silent movies; history of Brazilian cinema; sound and cinema}
+  \blindtext
+\end{abstract}
+\selectlanguage{brazil}
+\clearpage
+
+\section{O sonoro cinema silencioso}
+\Blindtext[5]
+
+\subsection{O caso brasileiro}
+\Blindtext[7]
+\end{document}

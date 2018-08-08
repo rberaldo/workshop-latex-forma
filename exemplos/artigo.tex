@@ -1,0 +1,61 @@
+%
+% artigo.tex
+%
+% Workshop de LaTeX do SciELO
+%
+% Demonstra:
+% - Estrutura e capacidades de um documento LaTeX
+% - Compilação usando lualatex (e pdflatex)
+% - Comandos: \section, \LaTeX, \tableofcontents, \url
+% - Classes: article, minimal e seu efeito em \section
+% - Erros de compilação
+% - Arquivos auxiliares e o comando latexmk -c
+%
+
+\documentclass[11pt,a4paper,oneside]{article}
+\usepackage{polyglossia}
+  \setdefaultlanguage{brazil}
+\usepackage{url}
+
+\title{Meu primeiro documento}
+\author{João da Silva}
+
+\begin{document}
+\frenchspacing
+
+\maketitle
+
+\begin{abstract}
+  Neste documento, veremos a estrutura básica e capacidades do \LaTeX.
+  Aprenderemos como compilar, o que são comandos simples, comandos que aceitam
+  argumentos e como o espaço em branco influencia o resultado final do
+  documento. Veremos, também, classes do documento, erros na hora da compilação
+  e arquivos auxiliares criados por esse processo.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introdução}
+
+Este é o nosso primeiro documento em \LaTeX{} e, para celebrar, faremos uma
+lista de coisas que aprendemos:
+
+\begin{itemize}
+  \item Estrutura básica de um documento \LaTeX
+  \item Compilação e possíveis erros
+  \item Comandos
+  \item Espaço em branco
+  \item Classes
+  \item Arquivos auxiliares
+\end{itemize}
+
+\section{Mais informações}
+
+Para mais informações e exemplos, veja nosso repositório em
+\url{https://gitlab.com/rberaldo/workshop-latex-scielo}.
+
+\begin{center}
+  \textit{Tenha um bom dia!}
+\end{center}
+
+\end{document}

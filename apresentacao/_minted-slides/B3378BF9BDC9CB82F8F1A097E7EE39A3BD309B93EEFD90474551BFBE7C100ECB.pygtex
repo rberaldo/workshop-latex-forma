@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{\PYGZbs{}newenvironment}\PYG{n+nb}{\PYGZob{}}italics\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}itshape}\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZob{}\PYGZcb{}}
+\end{Verbatim}

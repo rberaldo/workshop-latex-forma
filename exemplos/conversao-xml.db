@@ -1,0 +1,29 @@
+<!--
+conversao-xml.db
+
+Workshop de LaTeX do SciELO
+
+Demonstra:
+- Conversão de um DocBook para XML usando pandoc
+- Uso de templates com o pandoc
+-->
+
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+"http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<article>
+  <articleinfo>
+    <author>
+      <personname>
+        <firstname>Rafael</firstname>
+        <surname>Beraldo</surname>
+      </personname>
+    </author>
+    <title>Exemplo de XML</title>
+  </articleinfo>
+  <sect1>
+    <title>Olá, mundo!</title>
+    <para>
+      Corpo do documento.
+    </para>
+  </sect1>
+</article>

@@ -1,0 +1,113 @@
+%
+% macros.tex
+%
+% Workshop de LaTeX do SciELO
+%
+% Demonstra:
+% - Declaração de macros de substituição
+% - Uso do pacote xspace
+% - Redefinição de macros e customização do \maketitle
+% - Criação de macros que levam argumentos
+% - Criação de novos ambientes
+%
+
+\documentclass[a4paper]{article}
+\usepackage{polyglossia}
+  \setdefaultlanguage{brazil}
+  \setotherlanguages{english}
+\usepackage{blindtext}
+\usepackage{xcolor}
+\usepackage{xspace}
+
+% Macro de substituição
+\newcommand{\scielo}{SciELO\xspace}
+
+% Macro com argumento
+\newcommand{\eng}[1]{%
+  \emph{\textenglish{#1}}%
+}
+
+% Novo ambiente
+\newenvironment{spotlight}
+{
+  \vspace{1em}
+  \noindent\rule{\linewidth}{.5pt}\par\vspace{5pt}
+  \noindent\ignorespaces
+}
+{
+  \par
+  \noindent\rule{\linewidth}{.5pt}
+  \vspace{1em}\ignorespacesafterend
+}
+
+
+\title{Macros: como automatizar funções no \LaTeX}
+\author{Rafael Beraldo}
+\date{14 de junho de 2017}
+
+% Redefinindo o comando \maketitle
+\makeatletter % Para acessar comandos como \@author
+\renewcommand{\maketitle}{
+  \begin{flushleft}
+    % Todo o ambiente flushleft terá fonte sem serifa
+    \sffamily
+    % Vamos colocar uma régua com a largura da linha e a espessura de 1pt
+    {\rule{\linewidth}{1pt}}
+    % Título
+    {\Large\bfseries\@title\par}
+    \medskip
+    % Autor
+    {\color{darkgray}\large\itshape por \@author{}\par
+    % Data
+    dia \@date \par}
+    % Mais uma régua
+    {\rule{\linewidth}{1pt}}
+    % Espaçamento entre o título e resto do documento
+    \bigskip
+  \end{flushleft}
+}
+\makeatother
+
+\begin{document}
+\frenchspacing
+
+\maketitle
+
+Uma das maiores vantagens do \LaTeX{} em relação aos outros editores de texto é
+a sua extensibilidade. É possível adicionar funcionalidades ao sistema por meio
+de \emph{macros}. O próprio \LaTeX{} não passa de um conjunto (bastante
+complexo) de macros do \TeX.
+
+Essas macros são programas que automatizam certas funções e permitem que o
+autor foque em escrever, ao invés de realizar tarefas tediosas repetidamente.
+
+\section{Macros de substituição}
+
+O tipo mais simples de macro é o de substituição: \scielo. (Ver definição
+no preâmbulo do documento.)
+
+\section{Macros com variáveis}
+
+Em \LaTeX, é comum usar um~\verb+@+ para escrever macros que não devem ser
+facilmente acessíveis pelo usuário, como é o caso de \verb+\@author+. Vejamos o
+exemplo no preâmbulo de como utilizar esses comandos para redefinir o título.
+
+\section{Macros com argumentos}
+
+Este é uma parágrafo que contém \eng{some sentences in English which are
+hyphenated according to the correct rules}, se necessário.
+
+\section{Novos ambientes}
+
+Também é possível definir um ambiente novo:
+
+\begin{spotlight}
+  O cuidado em identificar pontos críticos no entendimento das metas propostas
+  pode nos levar a considerar a reestruturação dos conhecimentos estratégicos
+  para atingir a excelência. Todavia, a valorização de fatores subjetivos
+  talvez venha a ressaltar a relatividade das formas de ação.
+\end{spotlight}
+
+Vejamos a definição do ambiente no preâmbulo.
+
+\end{document}

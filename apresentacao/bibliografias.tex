@@ -1,0 +1,54 @@
+% Bibliografias %%%%%%%%%%%%%%
+\section{Bibliografias}
+
+% O BibTeX tem dois arquivos principais
+\begin{frame}
+  \frametitle{Bibliografias com o \hologo{BibTeX}: arquivos}
+  \LARGE
+  \hologo{BibTeX}: database (\code{bib})\\
+  e estilo (\code{bst})
+\end{frame}
+
+% Um exemplo de entrada bibliográfica. Explicar o uso de chaves em certos
+% lugares.
+\begin{frame}[fragile]
+  \frametitle{Bibliografias com o \hologo{BibTeX}: exemplo}
+  \LARGE
+  Exemplo de um arquivo \code{.bib}:
+  \vspace{1em}
+
+  \begin{minted}[autogobble,fontsize=\large,breaklines]{bibtex}
+    @article{greenwade93,
+      author  = "George D. Greenwade",
+      title   = "The {C}omprehensive {T}ex {A}rchive {N}etwork ({CTAN})",
+      year    = "1993",
+      journal = "TUGBoat",
+      volume  = "14",
+      number  = "3",
+      pages   = "342--351"
+    }
+  \end{minted}
+\end{frame}
+
+% No local desejado, colocamos a bibliografia
+\begin{frame}[fragile]
+  \frametitle{Bibliografias com o \hologo{BibTeX}: inserir arquivo \code{.bib}}
+  \LARGE
+  \latexcode{\bibliography{arquivo}}
+\end{frame}
+
+% Para citar, basta usar um desses comandos
+\begin{frame}[fragile]
+  \frametitle{Bibliografias com o \hologo{BibTeX}: como citar no texto}
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+  \cite[p.~20]{greenwade93}
+  \citeonline[p.~20]{greenwade93}
+  \end{minted}
+\end{frame}
+
+% Mais um live coding!
+\begin{frame}
+  \frametitle{Bibliografias com o \hologo{BibTeX}: exemplo}
+  \huge
+  Estudar \filename{exemplos/abntex2/\\trabalho-normatizado.tex}
+\end{frame}

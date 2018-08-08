@@ -1,0 +1,103 @@
+%
+% cinema-silencioso.tex
+%
+% Workshop de LaTeX do SciELO
+%
+% Demonstra:
+% - Como conseguir resultados similares ao artigo cinema-silencioso-original.tex
+% - Uso dos pacotes aprendidos até o momento, como fancyhdr e titling
+% - Redefinição de um ambiente (abstract)
+%
+
+\documentclass[11pt,a4paper,twoside]{article}
+\usepackage{polyglossia}
+  \setdefaultlanguage{brazil}
+\usepackage[hyphens]{url}
+\usepackage[hmargin=2.5cm,vmargin=3cm]{geometry}
+\usepackage{microtype}
+\usepackage{sectsty}
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage{calc}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{array}
+
+\title{O cinema silencioso e o som no Brasil (1894-1920)\thanks{Uma versão
+deste trabalho foi apresentada no GT “Comunicação e Cultura”, da COMPÓS de
+2016. Agradeço os apontamentos dos colegas do evento e em especial de meu
+supervisor de pesquisa, Prof. Eduardo Morettin, visando ao aprimoramento do
+texto.}}
+\author{Danielle Crepaldi Carvalho}
+\date{}
+
+% Seções sem numeração
+\setcounter{secnumdepth}{-2}
+
+% Alterar formatação do título
+\pretitle{\begin{flushright}\Huge\bfseries}
+\posttitle{\par\end{flushright}\vspace{0.5em}}
+\preauthor{\begin{flushright}\large}
+\postauthor{\par\end{flushright}}
+
+% Redefinir o ambiente abstract
+\renewenvironment{abstract}[1] % o ambiente leva um argumento
+{ % comandos que são executados no começo
+  \newcommand{\keywords}{#1}
+  \noindent\begin{minipage}[t]{\widthof{\abstractname:}+10pt}
+  \noindent\abstractname:\end{minipage}
+  \begin{minipage}[t]{\textwidth - \widthof{\abstractname:} - 10pt}}
+{ % comandos executados ao fim
+  \end{minipage}\par\medskip
+  \noindent\textbf{Palavras-chave}: \keywords\par\bigskip
+}
+
+% fancyhdr
+\fancyhead{} % clear all header fields
+\fancyhead[EC]{\scriptsize\bfseries\thetitle}
+\fancyhead[OC]{\scriptsize\bfseries\theauthor}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\bfseries\large\thepage}
+\fancyfoot[CE,CO]{\scriptsize Galaxia (São Paulo, online), ISSN 1982-2553, n.
+34, jan-abr., 2017, p. 85-97.}
+\renewcommand{\headrulewidth}{0.0pt}
+
+% only for the first page
+\fancypagestyle{firststyle}{
+  \fancyhead{} % clean header
+  \fancyhead[CE,CO]{
+    \begin{tabular}{m{2mm}m{.8\textwidth}}
+      \includegraphics[width=4mm]{cc.png} & \tiny\itshape\noindent Este
+      é um artigo publicado em acesso aberto (Open Access) sob a licença
+      Creative Commons Attribution, que permite uso, distribuição e reprodução
+      em qualquer meio, sem restrições desde que o trabalho original seja
+    corretamente citado.
+    \end{tabular}}
+}
+
+% --- document --- %
+\begin{document}
+\pagestyle{fancy}
+\frenchspacing
+
+\maketitle
+\thispagestyle{firststyle}
+
+\begin{abstract}{cinema silencioso; história do cinema brasileiro; som e cinema}
+  \blindtext
+\end{abstract}
+
+\begin{abstract}{cinema silencioso; história do cinema brasileiro; som e cinema}
+  \blindtext
+\end{abstract}
+\clearpage
+
+\section{O sonoro cinema silencioso}
+
+\Blindtext[5]
+
+\subsection{O caso brasileiro}
+
+\Blindtext[7]
+\end{document}

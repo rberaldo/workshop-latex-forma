@@ -1,0 +1,62 @@
+%
+% automatizando.tex
+%
+% Workshop de LaTeX do SciELO
+%
+% Problema: o documento a seguir precisa de várias macros que ainda não foram
+% definidas. Vamos criá-las, de acordo com as seguintes especificações:
+%
+% - A macro \address deve conter o endereço do SciELO: Av. Onze de Junho, 269 -
+%   Vila Clementino, São Paulo, SP - Brasil.
+% - A macro \telephone deve expandir para (55 11) 5083-3639.
+% - A macro \email{} deve aceitar um email como argumento e transformá-lo num
+%   link clicável. Além disso, ele deve ser formatado usando \texttt.
+% - A macro \todo{} deve aceitar um argumento e mudar a cor de fundo para
+%   amarelo para chamar a atenção do leitor do documento. Ele deve usar o
+%   comando \colorbox{cor}{texto} provido pelo pacote xcolor.
+% - Finalmente, mudaremos juntos a definição de \maketitle
+%
+
+\documentclass[a4paper]{article}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+  \setdefaultlanguage{brazil}
+\usepackage{xspace,xcolor,hyperref}
+
+% Minhas macros %%%%%%%%%%%%
+
+% Macro para nunca errar a capitalização de SciELO
+\newcommand{\scielo}{SciELO\xspace}
+
+% Defina abaixo o comando \address
+
+% Defina abaixo o comando \telephone
+
+% Defina abaixo o comando \email{}
+
+% Defina abaixo o comando \todo{}
+
+\title{Automatizando com macros no \LaTeX}
+\author{\scielo}
+
+% Modifique abaixo a definição de \maketitle
+% Faremos esta parte juntos
+
+% Começo do documento %%%%%%%%%%%%
+\begin{document}
+\frenchspacing
+
+Estamos aprendendo \LaTeX{} no \scielo. A seguir, vamos testar algumas
+substituições de texto e macros. Veja, por exemplo, como entrar em contato por
+carta, telefone ou email:
+
+\begin{itemize}
+  \item Endereço: \address
+  \item Telefone: \telephone
+  \item Email: \email{scielo@scielo.org}
+\end{itemize}
+
+Este documento ainda não está completo. Não se esqueça \todo{de criar todas as
+macros} e \todo{modificar o título de acordo com as especificações}.
+
+\end{document}

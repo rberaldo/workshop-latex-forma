@@ -1,0 +1,87 @@
+% Corpo do documento %%%%%%%%%%%%%%
+\section{Corpo do documento}
+
+% O corpo do documento
+\begin{frame}[fragile]
+  \frametitle{Corpo do documento}
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+    \begin{document}
+     …
+    \end{document}
+  \end{minted}
+\end{frame}
+
+% Divisões do documento
+\begin{frame}[fragile]
+  \frametitle{Corpo do documento: divisões do documento}
+  \large
+  \begin{multicols}{2}
+    \begin{itemize}
+      \item\latexcode{\part} (-1)
+      \item\latexcode{\chapter} (0)
+      \item\latexcode{\section} (1)
+      \item\latexcode{\subsection} (2)
+      \item\latexcode{\subsubsection} (3)
+      \item\latexcode{\paragraph} (4)
+      \item\latexcode{\subparagraph} (5)
+    \end{itemize}
+  \end{multicols}
+\end{frame}
+
+% Profundidade
+\begin{frame}[fragile]
+  \frametitle{Corpo do documento: profundidade das divisões}
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+  \setcounter{secnumdepth}{3}
+  \setcounter{tocdepth}{3}
+  \end{minted}
+\end{frame}
+
+% Comandos estrelados para controlar numeração e o que vai no sumário
+\begin{frame}[fragile]
+  \frametitle{Corpo do documento: comandos estrelados}
+  \begin{minted}[autogobble,fontsize=\large,breaklines]{latex}
+  \section*{Esta seção não terá numeração nem aparecerá no sumário}
+  \end{minted}
+\end{frame}
+
+% Sintaxe para controlar título que vai no sumário
+\begin{frame}[fragile]
+  \frametitle{Corpo do documento: controlar texto do sumário}
+  \begin{minted}[autogobble,fontsize=\large,breaklines]{latex}
+  \section[Seção muito longa]{Seção muito longa: provavelmente não ficará muito boa no sumário.}
+  \end{minted}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Corpo do documento: parágrafos}
+  \LARGE
+  Parágrafos são separados\\
+  por linhas em branco
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Corpo do documento: espaçamento entre parágrafos}
+  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
+  \setlength{\parskip}{1cm}
+  \setlength{\parskip}{1cm plus4mm minus3mm}
+  \end{minted}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Corpo do documento: indentação}
+  \LARGE
+  Pacote \code{indentfirst}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Corpo do documento}
+  \huge
+  Vejamos \filename{exemplo/artigo.tex}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Corpo do documento}
+  \huge
+  Resolver \filename{exercicios/meu-artigo.tex}
+\end{frame}
