@@ -154,8 +154,6 @@ Existem vários editores online de LaTeX. Os primeiros resultados no Google
 incluem:
 
 - [Overleaf](https://www.overleaf.com) (plano grátis começa com 100mb)
-- [Papeeria](http://papeeria.com/) (plano grátis permite um projeto ativo por
-  vez)
 - [ShareLaTeX](https://www.sharelatex.com/) (plano grátis para apenas um
   colaborador)
 
