@@ -1,3 +1,4 @@
+\beamer@endinputifotherversion {3.36pt}
 \headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
@@ -398,7 +399,7 @@
 \headcommand {\beamer@framepages {195}{195}}
 \headcommand {\slideentry {19}{0}{12}{196/196}{}{0}}
 \headcommand {\beamer@framepages {196}{196}}
-\headcommand {\sectionentry {20}{Escrevendo classes}{197}{Escrevendo classes}{0}}
+\headcommand {\sectionentry {20}{Pacotes para linguistas}{197}{Pacotes para linguistas}{0}}
 \headcommand {\beamer@sectionpages {185}{196}}
 \headcommand {\beamer@subsectionpages {185}{196}}
 \headcommand {\slideentry {20}{0}{1}{197/197}{}{0}}
@@ -407,47 +408,8 @@
 \headcommand {\beamer@framepages {198}{198}}
 \headcommand {\slideentry {20}{0}{3}{199/199}{}{0}}
 \headcommand {\beamer@framepages {199}{199}}
-\headcommand {\slideentry {20}{0}{4}{200/200}{}{0}}
-\headcommand {\beamer@framepages {200}{200}}
-\headcommand {\slideentry {20}{0}{5}{201/201}{}{0}}
-\headcommand {\beamer@framepages {201}{201}}
-\headcommand {\slideentry {20}{0}{6}{202/202}{}{0}}
-\headcommand {\beamer@framepages {202}{202}}
-\headcommand {\slideentry {20}{0}{7}{203/203}{}{0}}
-\headcommand {\beamer@framepages {203}{203}}
-\headcommand {\slideentry {20}{0}{8}{204/204}{}{0}}
-\headcommand {\beamer@framepages {204}{204}}
-\headcommand {\slideentry {20}{0}{9}{205/205}{}{0}}
-\headcommand {\beamer@framepages {205}{205}}
-\headcommand {\slideentry {20}{0}{10}{206/206}{}{0}}
-\headcommand {\beamer@framepages {206}{206}}
-\headcommand {\sectionentry {21}{Conversão de XML para \LaTeX }{207}{Conversão de XML para \LaTeX }{0}}
-\headcommand {\beamer@sectionpages {197}{206}}
-\headcommand {\beamer@subsectionpages {197}{206}}
-\headcommand {\slideentry {21}{0}{1}{207/207}{}{0}}
-\headcommand {\beamer@framepages {207}{207}}
-\headcommand {\slideentry {21}{0}{2}{208/208}{}{0}}
-\headcommand {\beamer@framepages {208}{208}}
-\headcommand {\slideentry {21}{0}{3}{209/209}{}{0}}
-\headcommand {\beamer@framepages {209}{209}}
-\headcommand {\slideentry {21}{0}{4}{210/210}{}{0}}
-\headcommand {\beamer@framepages {210}{210}}
-\headcommand {\slideentry {21}{0}{5}{211/211}{}{0}}
-\headcommand {\beamer@framepages {211}{211}}
-\headcommand {\slideentry {21}{0}{6}{212/212}{}{0}}
-\headcommand {\beamer@framepages {212}{212}}
-\headcommand {\slideentry {21}{0}{7}{213/213}{}{0}}
-\headcommand {\beamer@framepages {213}{213}}
-\headcommand {\slideentry {21}{0}{8}{214/214}{}{0}}
-\headcommand {\beamer@framepages {214}{214}}
-\headcommand {\slideentry {21}{0}{9}{215/215}{}{0}}
-\headcommand {\beamer@framepages {215}{215}}
-\headcommand {\slideentry {21}{0}{10}{216/216}{}{0}}
-\headcommand {\beamer@framepages {216}{216}}
-\headcommand {\slideentry {21}{0}{11}{217/217}{}{0}}
-\headcommand {\beamer@framepages {217}{217}}
-\headcommand {\beamer@partpages {1}{217}}
-\headcommand {\beamer@subsectionpages {207}{217}}
-\headcommand {\beamer@sectionpages {207}{217}}
-\headcommand {\beamer@documentpages {217}}
-\headcommand {\def \inserttotalframenumber {168}}
+\headcommand {\beamer@partpages {1}{199}}
+\headcommand {\beamer@subsectionpages {197}{199}}
+\headcommand {\beamer@sectionpages {197}{199}}
+\headcommand {\beamer@documentpages {199}}
+\headcommand {\def \inserttotalframenumber {151}}

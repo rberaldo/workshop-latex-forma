@@ -1,3 +1,4 @@
+\beamer@endinputifotherversion {3.36pt}
 \select@language {brazil}
 \beamer@sectionintoc {1}{História}{3}{0}{1}
 \beamer@sectionintoc {2}{Linguagem de marcação}{13}{0}{2}
@@ -19,5 +20,4 @@
 \beamer@sectionintoc {17}{Bibliografias}{162}{0}{17}
 \beamer@sectionintoc {18}{Macros}{168}{0}{18}
 \beamer@sectionintoc {19}{Pacotes úteis}{185}{0}{19}
-\beamer@sectionintoc {20}{Escrevendo classes}{197}{0}{20}
-\beamer@sectionintoc {21}{Conversão de XML para \LaTeX }{207}{0}{21}
+\beamer@sectionintoc {20}{Pacotes para linguistas}{197}{0}{20}

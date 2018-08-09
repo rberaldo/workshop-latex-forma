@@ -1,14 +1,14 @@
 %
 % automatizando.tex
 %
-% Workshop de LaTeX do SciELO
+% Workshop de LaTeX
 %
 % Problema: o documento a seguir precisa de várias macros que ainda não foram
 % definidas. Vamos criá-las, de acordo com as seguintes especificações:
 %
-% - A macro \address deve conter o endereço do SciELO: Av. Onze de Junho, 269 -
-%   Vila Clementino, São Paulo, SP - Brasil.
-% - A macro \telephone deve expandir para (55 11) 5083-3639.
+% - A macro \address deve conter o endereço do IEL: R. Sérgio Buarque de
+%   Holanda, 571 - Cidade Universitária, Campinas - SP
+% - A macro \telephone deve expandir para (19) 3521-1502.
 % - A macro \email{} deve aceitar um email como argumento e transformá-lo num
 %   link clicável. Além disso, ele deve ser formatado usando \texttt.
 % - A macro \todo{} deve aceitar um argumento e mudar a cor de fundo para
@@ -25,8 +25,8 @@
 
 % Minhas macros %%%%%%%%%%%%
 
-% Macro para nunca errar a capitalização de SciELO
-\newcommand{\scielo}{SciELO\xspace}
+% Macro para nunca errar a capitalização de ForMA
+\newcommand{\forma}{ForMA\xspace}
 
 % Defina abaixo o comando \address
 
@@ -37,7 +37,7 @@
 % Defina abaixo o comando \todo{}
 
 \title{Automatizando com macros no \LaTeX}
-\author{\scielo}
+\author{\forma}
 
 % Modifique abaixo a definição de \maketitle
 % Faremos esta parte juntos
@@ -46,15 +46,14 @@
 \begin{document}
 \frenchspacing
 
-Estamos aprendendo \LaTeX{} no \scielo. A seguir, vamos testar algumas
+Estamos aprendendo \LaTeX{} no \forma. A seguir, vamos testar algumas
 substituições de texto e macros. Veja, por exemplo, como entrar em contato por
 carta, telefone ou email:
 
 \begin{itemize}
   \item Endereço: \address
   \item Telefone: \telephone
-  \item Email: \email{scielo@scielo.org}
-\end{itemize}
+  \item Email: \email{forma@iel.unicamp.br}
 
 Este documento ainda não está completo. Não se esqueça \todo{de criar todas as
 macros} e \todo{modificar o título de acordo com as especificações}.

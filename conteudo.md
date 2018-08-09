@@ -1,6 +1,5 @@
 # Introdução ao LaTeX
 
-- Quem eu sou
 - Conteúdo do curso
 - Público-alvo
 - Para quem é o LaTeX?
@@ -28,9 +27,7 @@
 17. [Bibliografias](#bibliografias)
 18. [Macros](#macros)
 19. [Pacotes úteis](#pacotes-úteis)
-20. [Escrevendo classes](#escrevendo-classes)
-21. [Conversão de XML para LaTeX](#conversão-de-xml-para-latex)
-22. [Referências](#referências)
+20. [Referências](#referências)
 
 ## História e filosofia
 
