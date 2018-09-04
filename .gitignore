@@ -35,6 +35,7 @@
 *.synctex.gz
 *.synctex.gz(busy)
 *.pdfsync
+*.pygtex
 
 ## Auxiliary and intermediate files from other packages:
 # algorithms
