@@ -74,7 +74,7 @@ primeiro arquivo `.tex`, localizado em [`exemplos/artigo.tex`](exemplos/artigo.t
 Nesse arquivo, veremos:
 
 - Estrutura e capacidades de um documento LaTeX
-- Compilação usando `lualatex` (e `pdflatex`)
+- Compilação usando diferentes programas (`lualatex` e `pdflatex`)
 - Comandos: `\section, \LaTeX, \tableofcontents, \url`
 - Classes: `article`, `minimal` e seu efeito em `\section`
 - Erros de compilação

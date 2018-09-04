@@ -1,4 +1,4 @@
-# Workshop da LaTeX no SciELO
+# Workshop da LaTeX no IEL (20 e 20 de set/2018)
 
 O LaTeX (/ˈlɑːtɛx/ ou /ˈlɑːtɛk/) é um processador de textos. Diferentemente do
 Word ou LibreOffice Write, no entanto, o usuário não edita o texto visualmente,
@@ -27,6 +27,7 @@ Este workshop nasceu como uma evolução e expansão do [Workshop de LaTeX para 
 OpenSanca](https://github.com/opensanca/workshop-latex). Abaixo, está o
 histórico das apresentações até hoje:
 
+- 20 e 27 de setembro de 2018, no IEL/Unicamp
 - 13 e 14 de junho de 2017, no SciELO
 - [28 de maio de 2016](https://www.meetup.com/pt-BR/opensanca/events/230102377/), no opensanca
 - [25 de junho de 2016](https://www.meetup.com/pt-BR/opensanca/events/231664154/), no opensanca
