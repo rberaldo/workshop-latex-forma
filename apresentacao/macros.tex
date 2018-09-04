@@ -44,34 +44,6 @@
   \end{minted}
 \end{frame}
 
-% Macros com variáveis
-\begin{frame}
-  \frametitle{Macros com variáveis}
-  \LARGE
-  Macros como \latexcode{\maketitle} usam variáveis como
-  \latexcode{\@author}
-\end{frame}
-
-% Comandos com @ podem ser acessados após transformar @ em uma letra
-\begin{frame}
-  \frametitle{Macros com variáveis: acessando comandos reservados}
-  \LARGE
-  \latexcode{\makeatletter … \makeatother}
-\end{frame}
-
-% Veremos um exemplo de como isso pode ser usado para redefinir o comando
-% \maketitle
-\begin{frame}[fragile]
-  \frametitle{Macros com variáveis: customizando o
-  \latexcode{\maketitle}}
-  \LARGE
-  Veremos como customizar o \latexcode{\maketitle} usando o comando:
-
-  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
-  \renewcommand{\maketitle}{…}
-  \end{minted}
-\end{frame}
-
 % Macros com argumentos
 \begin{frame}[fragile]
   \frametitle{Macros com argumentos}
@@ -133,10 +105,4 @@
   \vspace{1em}
 
   Resultado de \latexcode{\todo}: \todo{texto usando o \latexcode{todo}}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Macros: exercício: mudar o \latexcode{\maketitle}}
-  \LARGE
-  Vamos ao documento mudar o \latexcode{\maketitle} juntos
 \end{frame}

@@ -1,5 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
- pandoc \PYGZhy{}s \PYGZhy{}t latex \PYG{l+s+se}{\PYGZbs{}}
-\PYGZhy{}f docbook exemplo.db \PYG{l+s+se}{\PYGZbs{}}
-\PYGZhy{}o exemplo.tex 
-\end{Verbatim}

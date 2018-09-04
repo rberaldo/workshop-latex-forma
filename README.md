@@ -18,8 +18,8 @@ ABNT, por exemplo.
 Neste workshop, partiremos do básico do LaTeX, como por exemplo o que são
 comandos e como um arquivo é estruturado; passaremos por tópicos como listas,
 tipografia, tabelas, entre outros; e finalmente veremos como utilizar pacotes
-específicos para escrever artigos científicos, bem como criar classes para
-automatizar essas funções.
+específicos para escrever artigos científicos, em especial pacotes que são
+úteis para linguistas.
 
 ## Apresentações
 

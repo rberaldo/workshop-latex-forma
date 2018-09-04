@@ -1,6 +1,0 @@
-\frametitle{Novos ambientes}
-  \begin{minted}[autogobble,fontsize=\LARGE,breaklines]{latex}
-  \newenvironment{italics}
-  {\itshape}
-  {}
-  \end{minted}

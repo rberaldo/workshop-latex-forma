@@ -1,6 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{\PYGZbs{}usepackage}\PYG{n+nb}{\PYGZob{}}fontspec\PYG{n+nb}{\PYGZcb{}}
-  \PYG{k}{\PYGZbs{}setmainfont}\PYG{n+nb}{\PYGZob{}}Linux Libertine\PYG{n+nb}{\PYGZcb{}}[
-    Path = fonts/
-  ]
-\end{Verbatim}

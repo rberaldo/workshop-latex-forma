@@ -6,7 +6,6 @@
 % Demonstra:
 % - Declaração de macros de substituição
 % - Uso do pacote xspace
-% - Redefinição de macros e customização do \maketitle
 % - Criação de macros que levam argumentos
 % - Criação de novos ambientes
 %
@@ -42,31 +41,7 @@
 
 
 \title{Macros: como automatizar funções no \LaTeX}
-\author{Rafael Beraldo}
-\date{14 de junho de 2017}
-
-% Redefinindo o comando \maketitle
-\makeatletter % Para acessar comandos como \@author
-\renewcommand{\maketitle}{
-  \begin{flushleft}
-    % Todo o ambiente flushleft terá fonte sem serifa
-    \sffamily
-    % Vamos colocar uma régua com a largura da linha e a espessura de 1pt
-    {\rule{\linewidth}{1pt}}
-    % Título
-    {\Large\bfseries\@title\par}
-    \medskip
-    % Autor
-    {\color{darkgray}\large\itshape por \@author{}\par
-    % Data
-    dia \@date \par}
-    % Mais uma régua
-    {\rule{\linewidth}{1pt}}
-    % Espaçamento entre o título e resto do documento
-    \bigskip
-  \end{flushleft}
-}
-\makeatother
+\author{Workshop de LaTeX}
 
 \begin{document}
 \frenchspacing
@@ -85,12 +60,6 @@ autor foque em escrever, ao invés de realizar tarefas tediosas repetidamente.
 
 O tipo mais simples de macro é o de substituição: \forma. (Ver definição
 no preâmbulo do documento.)
-
-\section{Macros com variáveis}
-
-Em \LaTeX, é comum usar um~\verb+@+ para escrever macros que não devem ser
-facilmente acessíveis pelo usuário, como é o caso de \verb+\@author+. Vejamos o
-exemplo no preâmbulo de como utilizar esses comandos para redefinir o título.
 
 \section{Macros com argumentos}
 

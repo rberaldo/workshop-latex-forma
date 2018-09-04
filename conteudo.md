@@ -250,7 +250,7 @@ O corpo do documento é delimitado por:
 ```
 
 Neste *ambiente* que criamos, podemos estruturar nosso documento usando os
-comandos a seguir (os números são a *profundidade* a subdivisão):
+comandos a seguir (os números são a *profundidade* da subdivisão):
 
 - `\part`: -1
 - `\chapter`: 0 (apenas `book` e `report`)
@@ -359,12 +359,11 @@ documentação de todos os pacotes lá. Vejamos [a documentação do
 
 ## Fontes
 
-Anteriormente, arquivos LateX compilados usando o programa `pdflatex` não
-podiam usar qualquer fonte. Existem catálogos de fontes suportadas por esse
-programa, como por exemplo [The LaTeX Font
-Catalogue](http://www.tug.dk/FontCatalogue/). Atualmente, no entanto, é
-possível usar o `lualatex` ou ainda o `xelatex`, que oferecem suporte aos
-formatos de fonte mais comuns.
+Antigamente, arquivos LateX compilados usando o programa `pdflatex` não podiam
+usar qualquer fonte. Existem catálogos de fontes suportadas por esse programa,
+como por exemplo [The LaTeX Font Catalogue](http://www.tug.dk/FontCatalogue/).
+Atualmente, no entanto, é possível usar o `lualatex` ou ainda o `xelatex`, que
+oferecem suporte aos formatos de fonte mais comuns.
 
 Para isso, devemos carregar o pacote `fontspec`:
 
@@ -997,43 +996,6 @@ LaTeX está esperando um argumento. No entanto, é possível carregar o pacote
 \newcommand{\forma}{ForMA\xspace}
 ```
 
-### Macros com variáveis
-
-É possível usar o método acima para guardar informações, como o nome do autor
-ou título do documento. O comando `\maketitle`, por exemplo, faz uso dos
-comandos `\@title`, `\@author` e `\@date`, que são configurados pelo autor
-usando os comandos `\title`, `\author` e `\date`, respectivamente.
-
-O uso de `@` previne que essas macros sejam usadas acidentalmente pelo usuário,
-de modo que devemos utilizar os comandos `\makeatletter` e `\makeatother` para
-poder utilizar as macros acima.
-
-Também é possível redefinir uma macro em LaTeX, usando o comando
-`\renewcommand`:
-
-```latex
-\makeatletter % Para acessar comandos como \@author
-\renewcommand{\maketitle}{
-  \begin{flushleft}
-    \sffamily
-    % Vamos colocar uma régua com a largura da linha e a espessura de 1pt
-    {\rule{\linewidth}{1pt}}
-    % Título
-    {\Large\bfseries\@title\par}
-    \medskip
-    % Autor
-    {\color{darkgray}\large\itshape por \@author{}\par
-    % Data
-    dia \@date \par}
-    % Mais uma régua
-    {\rule{\linewidth}{1pt}}
-    % Espaçamento entre o título e resto do documento
-    \bigskip
-  \end{flushleft}
-}
-\makeatother
-```
-
 ### Macros com argumentos
 
 Já encontramos muitos comandos que levam argumentos, como por exemplo
@@ -1077,210 +1039,6 @@ Por exemplo, o ambiente a seguir deixa o texto em itálico:
 Temos exemplos no arquivo [`exemplos/macros.tex`](exemplos/macros.tex). A
 seguir, resolver o exercício
 [`exercicios/automatizando.tex`](exercicios/automatizando.tex).
-
-## Pacotes úteis
-
-O usuário de LaTeX tem ao seu dispor uma infinidade de pacotes criados tanto
-pelo projeto oficial, bem como pela comunidade mundial de usuários. O
-[CTAN](https://ctan.org/) é o repositório central desse conhecimento. Muitas
-vezes, é uma ideia melhor utilizar um pacote já pronto e documentado, do que
-tentar implementar uma macro manualmente. A única desvantagem é ter que
-aprender a utilizar pacotes escritos por pessoas diferentes e que, em raros
-casos, podem conflitar entre si ou com a classe utilizada. Não obstante, eles
-podem nos ajudar a economizar muito tempo, uma vez que tenhamos aprendido seu
-uso. A seguir, estudaremos uma lista de pacotes escolhidos especialmente para
-ajudar com a criação de novas classes, nosso próximo tópico.
-
-### `titling`
-
-Para realizar modificações rotineiras ao título das classes padrão, ao invés de
-reimplementar o comando `\maketitle` como fizemos anteriormente, podemos usar o
-pacote [`titling`](https://www.ctan.org/pkg/titling).
-
-Esse pacote providencia comandos para o controle de `\maketitle` e `\thanks`,
-além de reter os valores de `\author`, `\title` e `\date`, que ficam acessíveis
-por todo o documento através dos comandos `\theauthor`, `\thetitle` e
-`\thedate`, respectivamente.
-
-Os principais comandos são:
-
-- `\pretitle`
-- `\posttitle`
-- `\preauthor`
-- `\postauthor`
-- `\predate`
-- `\postdate`
-
-Os comandos acima permitem que você rode comandos *antes* ou *depois*  do
-título, autor e data. Quando o pacote é carregado, eles automaticamente imitam
-o output de `\maketitle` das classes `report` e `article`:
-
-```latex
-\pretitle{\begin{center}\LARGE}
-\posttitle{\par\end{center}\vskip 0.5em}
-\preauthor{\begin{center}
-  \large \lineskip 0.5em%
-  \begin{tabular}[t]{c}}
-\postauthor{\end{tabular}\par\end{center}}
-\predate{\begin{center}\large}
-\postdate{\par\end{center}}
-```
-
-Os comandos podem ser modificados para atingir os resultados desejados. Por
-exemplo, para um título alinhado à direta, sem serifas e com a data à esquerda
-e em versaletes:
-
-```latex
-\pretitle{\begin{flushright}\LARGE\sffamily}
-\posttitle{\par\end{flushright}\vskip 0.5em}
-\predate{\begin{flushleft}\large\scshape}
-\postdate{\par\end{flushleft}}
-```
-
-### `sectsty`
-
-O pacote [`sectsty`](https://www.ctan.org/pkg/sectsty) provê maneiras de
-modificar a fonte dos comandos de secionamento do LaTeX (como `\chapter`,
-`\section`, `\subsection` etc.).
-
-Carregando o pacote, ganhamos comandos como `\allsectionsfonts`, para modificar
-a fonte de todas as seções, e `\sectionfont`, para realizar modificações apenas
-nas fontes de seções.
-
-Se desejarmos, por exemplo, que todas as seções de um determinado documento
-fiquem à direta e sejam serifadas, podemos utilizar o seguinte comando:
-
-```latex
-\allsectionsfont{\sffamily\raggedleft}
-```
-
-### `titlesec`
-
-Mais poderoso que o pacote acima, o
-[`titlesec`](https://www.ctan.org/pkg/titlesec) não apenas permite a mudança
-das fontes dos comandos de secionamento, mas também a mudança dos rótulos,
-posição do texto e rodar código antes ou depois do comando de seção.
-
-Recomendamos o tutorial [Making a Resume with some LaTeX
-Magic](https://www.youtube.com/watch?v=VjsX4tznW40) para uma demonstração de
-como utilizar o comando.
-
-### `fancyhdr`
-
-É possível mudar o conteúdo do cabeçalho e rodapé dos documentos facilmente
-utilizando o pacote [`fancyhdr`](https://www.ctan.org/pkg/fancyhdr):
-
-```latex
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-```
-
-Devemos usar comandos diferentes para controlar o cabeçalho e rodapé em função
-do estilo de impressão que está configurado. Vejamos o resultado a seguir para
-documentos que serão impressos em apenas um lado da folha (opção `oneside` na
-maior parte das classes):
-
-![Cabeçalho e rodapé em documento impresso em apenas um lado da
-folha](img/oneside.png)
-
-O exemplo acima, retirado da documentação do `fancyhdr`, é produzido utilizando
-os seguintes comandos:
-
-```latex
-\lhead{} % reseta a parte esquerda do cabeçalho
-\chead{} % reseta a parte direita do cabeçalho
-\rhead{\textbf{The performance of new graduates}}
-\lfoot{From: K. Grant}
-\cfoot{To: Dean A. Smith}
-\rfoot{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-```
-
-Documentos que serão impressos em ambos os lados do papel (opção `twoside` e
-padrão em classes como `book`) são configurados de forma diferente, pois os
-cabeçalhos e rodapés mudam quando a página é ímpar ou par. Vejamos um exemplo
-seguido do código utilizado para gerá-lo:
-
-![Exemplo de cabeçalho e rodapé para documentos twoside](img/twoside.png)
-
-```latex
-\fancyhead{} % limpa todos os cabeçalhos
-\fancyhead[RO,LE]{\textbf{The performance of new graduates}}
-\fancyfoot{} % limpa todos os rodapés
-\fancyfoot[LE,RO]{\thepage} % \thepage é o número da página
-\fancyfoot[LO,CE]{From: K. Grant} % LO é significa Left Odd; CE significa
-                                  % Center Even; etc.
-\fancyfoot[CO,RE]{To: Dean A. Smith}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
-```
-
-### `geometry`
-
-Mudar o tamanho da página ou margens no LaTeX é uma tarefa bastante fácil com o
-pacote [`geometry`](https://www.ctan.org/pkg/geometry). Para mudar todas as
-margens para `2cm`, por exemplo, podemos carregar o pacote da seguinte maneira:
-
-```latex
-\usepackage[margin=2cm](geometry)
-```
-
-O pacote é extremamente versátil e possui um grande número de opções
-pré-configuradas, como por exemplo `b5paper`, um tamanho de papel bastante
-utilizado para livros e envelopes.
-
-### `tcolorbox`
-
-O pacote [`tcolorbox`](https://www.ctan.org/pkg/tcolorbox) permite a criação de
-caixas de texto coloridas e decoradas, desde muito simples até bastante
-complexas. Elas podem conter um título e podem também ser dividas em duas
-partes, o que é útil para mostrar código e seu output, por exemplo.
-
-A sintaxe é bastante simples e é bastante fácil conseguir efeitos bons com
-poucas opções. O pacote é muito extensível, o que significa que ler a
-documentação e encontrar exemplos é fundamental. A sintaxe básica é reproduzida
-a seguir:
-
-```latex
-\begin{tcolorbox}[options]
-…
-\end{tcolorbox}
-```
-
-Um exemplo com título, cor de fundo e dividido ao meio:
-
-```latex
-\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=Meu título]
-  Este é um exemplo de \textbf{tcolorbox}.
-  \tcblower
-  Aqui está a parte de baixo da caixa de texto.
-\end{tcolorbox}
-```
-
-### `microtype`
-
-O pacote [`microtype`](https://www.ctan.org/pkg/microtype) “provê ao LaTeX
-extensões como protusão de caracteres, expansão de fonte, ajuste entre palavras
-e kerning adicionais.” Ele melhora consideravelmente a disposição das fontes no
-documento, como ilustrado [neste artigo escrito por Siarhei
-Khirevich](http://www.khirevich.com/latex/microtype/).
-
-Não é necessário configurá-lo, bastando apenas o seguinte comando no preâmbulo:
-
-```latex
-\usepackage{microtype}
-```
-
-### Exemplo e exercício
-
-Veremos exemplos de como utilizar os pacotes acima em
-[`exemplos/pacotes-uteis.tex`](exemplos/pacotes-uteis.tex). A seguir, veremos
-como reproduzir um artigo encontrado na database do SciELO usando os pacotes
-acima em [`exemplos/cinema-silencioso.tex`](exemplos/cinema-silencioso.tex).
-Finalmente, iremos resolver
-[`exercicios/estomatol-herediana.tex`](exercicios/estomatol-herediana.tex).
-
 
 ## Referências
 

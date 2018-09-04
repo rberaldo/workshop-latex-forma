@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{\PYGZbs{}cos} (2\PYG{k}{\PYGZbs{}theta}) = \PYG{k}{\PYGZbs{}cos}\PYG{n+nb}{\PYGZca{}}2 \PYG{k}{\PYGZbs{}theta} \PYGZhy{} \PYG{k}{\PYGZbs{}sin}\PYG{n+nb}{\PYGZca{}}2 \PYG{k}{\PYGZbs{}theta}
-\end{Verbatim}

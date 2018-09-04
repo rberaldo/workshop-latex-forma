@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{\PYGZbs{}section}      \PYG{n+nb}{\PYGZob{}}Introdução\PYG{n+nb}{\PYGZcb{}}
-    \PYG{k}{\PYGZbs{}label}\PYG{n+nb}{\PYGZob{}}introducao\PYG{n+nb}{\PYGZcb{}}
-
-    Este exemplo funciona, mas o código não é
- muito legível.  O resultado será perfeito, entretanto.
-\end{Verbatim}

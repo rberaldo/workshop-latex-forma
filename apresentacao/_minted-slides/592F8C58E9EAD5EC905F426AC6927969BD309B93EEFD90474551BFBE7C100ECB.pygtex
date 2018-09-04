@@ -1,4 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{\PYGZbs{}setlength}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}parskip}\PYG{n+nb}{\PYGZcb{}\PYGZob{}}1cm\PYG{n+nb}{\PYGZcb{}}
-\PYG{k}{\PYGZbs{}setlength}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}parskip}\PYG{n+nb}{\PYGZcb{}\PYGZob{}}1cm plus4mm minus3mm\PYG{n+nb}{\PYGZcb{}}
-\end{Verbatim}

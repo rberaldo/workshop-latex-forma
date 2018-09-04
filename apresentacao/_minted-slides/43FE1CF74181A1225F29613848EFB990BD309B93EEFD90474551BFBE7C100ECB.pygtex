@@ -1,5 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k}{\PYGZbs{}usepackage}\PYG{n+nb}{\PYGZob{}}polyglossia\PYG{n+nb}{\PYGZcb{}}
-  \PYG{k}{\PYGZbs{}setdefaultlanguage}\PYG{n+nb}{\PYGZob{}}brazil\PYG{n+nb}{\PYGZcb{}}
-  \PYG{k}{\PYGZbs{}setotherlanguage}\PYG{n+nb}{\PYGZob{}}english\PYG{n+nb}{\PYGZcb{}}
-\end{Verbatim}
