@@ -4,16 +4,19 @@
 % Workshop de LaTeX
 %
 % Demonstra:
-% - tipa
-% - forest
-% - linguex
+% - Transcrições fonéticas com o pacote tipa
+% - Árvores sintáticas usando o pacote forest
+% - Exemplos e glosas com o linguex
 %
 
 \documentclass[11pt,a4paper,oneside]{article}
 \usepackage{fontspec}
 \usepackage{polyglossia}
   \setdefaultlanguage{brazil}
-\usepackage{tipa,
+\usepackage{multicol}
+% Pacotes para linguística
+\usepackage{tipa,vowel,linguex}
+\usepackage[linguistics]{forest}
 
 \title{Linguística no \LaTeX}
 \author{Workshop de LaTeX}
@@ -23,8 +26,247 @@
 
 \maketitle
 
+O LaTeX traz uma série de pacotes que ajudam em tarefas de tipografia comuns
+para linguistas. Veremos abaixo como escrever transcrições fonéticas com o IPA
+de maneira fácil; como inserir árvores sintáticas que não são imagens e por
+isso não perdem resolução ao serem impressas; e como inserir exemplos, glosas e
+fazer referências a esses elementos no texto.
+
 \section{Transcrições fonéticas}
+
+O \verb+tipa+ permite que você escreva usando o Alfabeto Fonético Internacional
+(IPA) sem ter que procurar e inserir símbolos a partir de uma lista. Tudo o que
+for escrito dentro do comando \verb+\textipa{}+ será convertido
+automaticamente, seguindo uma tabela de referência intuitiva. Por exemplo, para
+produzir [lĩŋ.ˈgʷis.tɐs], basta digitar:
+
+\begin{center}
+  \textipa{l\~\i N.\textprimstress g\super wis.t5s}
+\end{center}
+
+Alguns exemplos de vogais orais:
+
+\begin{center}
+  \textipa{[i e E a O o u]}\\
+  \textipa{[I U 5]}
+\end{center}
+
+E vogais nasais:
+
+\begin{center}
+  \textipa{\~o}\\
+  \textipa{\~\textschwa}\\
+  \textipa{\~5}
+\end{center}
+
+E também algumas vogais do português brasileiro:
+
+\begin{center}
+  \begin{multicols}{2}
+    \textipa{S}\\
+    \textipa{Z}\\
+    \textipa{L}\\
+    \textipa{\textltailn}\\
+    \textipa{N}\\
+    \textipa{\textfishhookr}\\
+    \textipa{\textturnr}\\
+    \textipa{\t{tS}}\\
+    \textipa{\t{dZ}}
+  \end{multicols}
+\end{center}
+
+Ainda é possível inserir diagramas de vogais de maneira bastante simples,
+usando o pacote \verb+vowel+. O diagrama a seguir é idêntico ao que pode ser
+encontrado na última versão do IPA:
+
+\begin{center}
+  \begin{vowel}
+    \putcvowel[l]{i}{1}
+    \putcvowel[r]{y}{1}
+    \putcvowel[l]{e}{2}
+    \putcvowel[r]{\o}{2}
+    \putcvowel[l]{\textepsilon}{3}
+    \putcvowel[r]{\oe}{3}
+    \putcvowel[l]{a}{4}
+    \putcvowel[r]{\textscoelig}{4}
+    \putcvowel[l]{\textscripta}{5}
+    \putcvowel[r]{\textturnscripta}{5}
+    \putcvowel[l]{\textturnv}{6}
+    \putcvowel[r]{\textopeno}{6}
+    \putcvowel[l]{\textramshorns}{7}
+    \putcvowel[r]{o}{7}
+    \putcvowel[l]{\textturnm}{8}
+    \putcvowel[r]{u}{8}
+    \putcvowel[l]{\textbari}{9}
+    \putcvowel[r]{\textbaru}{9}
+    \putcvowel[l]{\textreve}{10}
+    \putcvowel[r]{\textbaro}{10}
+    \putcvowel{\textschwa}{11}
+    \putcvowel[l]{\textrevepsilon}{12}
+    \putcvowel[r]{\textcloserevepsilon}{12}
+    \putcvowel{\textsci\ \textscy}{13}
+    \putcvowel{\textupsilon}{14}
+    \putcvowel{\textturna}{15}
+    \putcvowel{\ae}{16}
+  \end{vowel}
+\end{center}
+
 \section{Árvores sintáticas}
+
+Existem muitos pacotes para a inserção de árvores sintáticas no LaTeX, mas
+provavelmente o melhor e mais poderoso é o \verb+forest+. Para inserir uma
+árvore, basta iniciar o ambiente `forest` e inserir uma sentença com os
+constituintes delimitados por chaves. Ela será convertida automaticamente para
+uma árvore.
+
+\begin{forest}
+  [CP [C] [IP [I] [VP [V] [NP] ] ] ]
+\end{forest}
+
+Por motivos de legibilidade do código, devemos pular linhas e indentar os
+constituintes que estão em níveis mais baixos da árvore:
+
+\begin{forest}
+  [CP
+    [C]
+      [IP
+        [I]
+        [VP
+          [V]
+          [NP]
+        ]
+      ]
+  ]
+\end{forest}
+
+A árvore a seguir é um exemplo com todos os nós rotulados e com os nós
+terminais precedidos de linhas. Note como os nós terminais estão marcados como
+constituintes dentro de outros constituintes, por exemplo em \verb+[DP [O menino]]+.
+Note, ainda, que \verb+_i$+ significa que estamos entrando no modo de
+matemática (\verb+$…$+) e inserindo um \emph{i} subscrito (\verb+_i+):
+
+\begin{forest}
+  [IP
+    [DP [O menino$_i$]]
+    [I$'$
+      [I [chegou$_j$]]
+      [VP
+      [V$'$
+        [V [t$_j$]]
+        [DP [t$_i$]]
+      ]
+      ]
+    ]
+  ]
+\end{forest}
+
+É bastante usual omitirmos as linhas que levam aos nós terminais, pois algumas
+pessoas as consideram redundantes. Isso é possível usando uma sintaxe
+ligeiramente diferente. Note que, agora, há uma quebra de linha e apenas um
+constituinte em \verb+[DP\\ O menino]+, por exemplo:
+
+\begin{forest}
+  [IP
+    [DP\\ O menino$_i$]
+    [I$'$
+      [I\\ chegou$_j$]
+      [VP
+        [V$'$
+          [V\\ t$_j$]
+          [DP\\ t$_i$]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+
+O \verb+forest+ aceita uma série de customizações que não discutiremos no
+momento. Vejamos apenas um exemplo. A árvore a seguir não tem todos os nós
+rotulados e isso causa um comportamento estranho quando a árvore é disposta na
+página. No entanto, podemos usar a opção \texttt{for tree = nice empty nodes}
+para remediar a situação:
+
+\begin{forest}
+  for tree = nice empty nodes
+  [
+    [
+      [a]
+      [menina]
+    ]
+    [
+      [comeu]
+        [
+          [o]
+          [bolo]
+        ]
+    ]
+  ]
+\end{forest}
+
+Essa opção, porque se encontra dentro do ambiente \verb+forest+, irá se aplicar
+somente para a árvore em questão. Veja o manual do pacote para mais opções.
+
+Às vezes, desejamos omitir informações irrelevantes em alguma árvore.
+Explicitamos nossa decisão desenhando um triângulo sobre o constituinte que não
+foi esmiuçado. Para isso, usamos a opção \verb+roof+, que se aplica a um
+constituinte em nossa árvore. Veja no exemplo a seguir, onde o constituinte
+\emph{chutada pelo menino} está simplificado:
+
+\begin{forest}
+  [IP
+    [DP\\ a bola]
+    [I$'$
+      [I\\ foi]
+      [VP
+        [V$'$
+          [V]
+          [PartP [chutada pelo\\ menino, roof]]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+
 \section{Exemplos e glosas}
+
+Outra tarefa especialmente comum para o linguista é apresentar seus dados em
+formato de exemplos de sentenças, que são numeradas à esquerda. Não existe uma
+implementação perfeita em LaTeX para isso, pois cada uma tem suas vantagens e
+defeitos. O \verb+linguex+ é um desses pacotes com suporte a exemplos e glosas.
+Vejamos alguns exemplos básicos:
+
+\ex. Chegou o menino.
+
+\ex. Chegou a carta.
+
+\ex.* A chegou carta.
+
+Sempre deixe uma linha em branco para indicar o fim de um exemplo. É possível
+mostrar também subexemplos:
+
+\ex.
+  \a. Chegou o menino.
+  \b. O menino chegou.
+
+Também é possível escrever glosas usando o comando \verb+\exg.+. As palavras
+serão alinhadas automaticamente:
+
+\exg.
+  Gila abur-u-n ferma hamišaluǧ güǧüna amuq’-da-č.\\
+  now they-OBL-GEN farm forever behind stay-FUT-NEG\\
+  ``Now their farm will not stay behind forever.''
+
+\subsection{Referências cruzadas}
+
+Já vimos que os comandos \verb+\label+ e \verb+\ref+ permitem criar referências
+que são automaticamente numeradas e atualizadas pelo LaTeX. Esses comandos
+também funcionam nos exemplos e glosas do \verb+linguex+:
+
+\ex.\label{ex:gram} Chegou o menino.
+
+\ex.*\label{ex:agram} A chegou carta.
+
+Em~\ref{ex:gram}, temos uma sentença bem formada, ao contrário
+de~\ref{ex:agram}, que é uma sentença agramatical.
 
 \end{document}
