@@ -26,7 +26,7 @@
 16. [A classe `abntex2`](#a-classe-abntex2)
 17. [Bibliografias](#bibliografias)
 18. [Macros](#macros)
-19. [Pacotes úteis](#pacotes-úteis)
+19. [Linguística](#linguística)
 20. [Referências](#referências)
 
 ## História e filosofia
@@ -446,8 +446,9 @@ tradição tipográfica muito antiga, que ganhamos de graça usando o LaTeX.
 
 ### Exemplo e exercício
 
-Vejamos o exemplos em [`exemplos/fontes.tex`](exemplos/fontes.tex) e depois,
-vamos resolver
+Vejamos o exemplos em
+[`exemplos/fontes.tex`](exemplos/fontes.tex)
+e depois, vamos resolver
 [`exercicios/sonhos-noites-verao.tex`](exercicios/sonhos-noites-verao.tex).
 
 ## Layouts de página
@@ -559,8 +560,8 @@ maneira, com os comandos `\vspace{comprimento}` e `\vfill`.
 ### Exemplo e exercício
 
 Vejamos mais no exemplo
-[`exemplos/posicao-texto.tex`](exemplos/posicao-texto.tex). Depois, vamos
-resolver
+[`exemplos/posicao-texto.tex`](exemplos/posicao-texto.tex).
+Depois, vamos resolver
 [`exercicios/certificado-posicionado.tex`](exercicios/certificado-posicionado.tex).
 
 ## Listas
@@ -673,8 +674,7 @@ Veremos alguns exemplos de tabelas empregando essas ideias em
 - Quebras de linhas em tabelas
 - O pacote [`booktabs`](https://www.ctan.org/pkg/booktabs)
 - O comando `\multicolumn`
-- O pacote [`longtable`](https://www.ctan.org/pkg/longtable) e o comando
-  `\endhead`; existem outros comandos que não exploraremos aqui
+- O pacote [`longtable`](https://www.ctan.org/pkg/longtable) e o comando `\endhead`; existem outros comandos que não exploraremos aqui
 
 ### Flutuando com `table`
 
@@ -738,12 +738,9 @@ ambiente que aceita o alinhamento `X`, que é flexível.
 Como em tudo em LaTeX, quantidade de pacotes e detalhes que podemos discutir é
 grande demais para este pequeno workshop. Deixo aqui alguns links úteis:
 
-- [Tutorial do Wikibooks](https://en.wikibooks.org/wiki/LaTeX/Tables), do qual
-  tiramos muitas ideias
-- [Descrição de vários pacotes para tabelas, seus usos e
-  conflitos](http://tex.stackexchange.com/q/12672)
-- [Lista de ferramentas para ajudar a criação de
-  tabelas](http://tex.stackexchange.com/q/49414)
+- [Tutorial do Wikibooks](https://en.wikibooks.org/wiki/LaTeX/Tables), do qual tiramos muitas ideias
+- [Descrição de vários pacotes para tabelas, seus usos e conflitos](http://tex.stackexchange.com/q/12672)
+- [Lista de ferramentas para ajudar a criação de tabelas](http://tex.stackexchange.com/q/49414)
 - [Table Generator](http://www.tablesgenerator.com/)
 - [Table Editor](http://truben.no/table/)
 
@@ -925,14 +922,26 @@ ambientes novos, como por exemplo:
 - `resumo` (ambiente)
 
 …entre outros. Não faremos um exercício de abnTeX2, porém vamos explorar a
-anatomia de uma monografia ficcional. Veja o
-[manual](http://repositorios.cpai.unb.br/ctan/macros/latex/contrib/abntex2/doc/abntex2.pdf)
-para mais informações sobre a organização do arquivo.
+anatomia de uma monografia ficcional. Veja o [manual](http://repositorios.cpai.unb.br/
+ctan/macros/latex/contrib/abntex2/doc/abntex2.pdf) para mais informações sobre
+a organização do arquivo.
 
 ### Exemplo
 
-Estudaremos
-[`exemplos/abntex2/trabalho-normatizado.tex`](exemplos/abntex2/trabalho-normatizado.tex).
+Estudaremos [`exemplos/abntex2/trabalho-normatizado.tex`](exemplos/abntex2/trabalho-normatizado.tex).
+
+### Classes úteis para alunos da Unicamp
+
+No site da Pró-reitoria de Pós-Graduação da Unicamp, encontramos mais
+informações sobre o [formato padrão das dissertações e
+teses](http://www2.prpg.gr.unicamp.br/prpg/?page_id=741) defendidas na
+universidade. Infelizmente, no momento não existe uma implementação de classe
+LaTeX ideal para todos os alunos da Unicamp. Veja abaixo uma lista de templates
+que podem ajudar, porém deverão ser adaptados pelo usuário:
+
+- [Modelo de tese do IMECC](https://github.com/lpoo/modelo_tese_imecc), desatualizado em relação à última versão da norma, CCPG/001/2015
+- [Mais dois modelos desatualizados no site da FEEC](https://www0.fee.unicamp.br/cpg/Modelos.html)
+- [Modelo específico para o Instituto de Computação](https://www.ic.unicamp.br/ensino/pg/info/estilomonografia), atualizado porém não é facilmente customizável
 
 ## Bibliografias
 
@@ -961,8 +970,7 @@ implementa um estilo `bst` que corresponde ao estilo de citações da ABNT.
 
 ### Exemplo
 
-Vejamos o arquivo
-[`exemplos/abntex2/trabalho-normatizado.tex`](exemplos/abntex2/trabalho-normatizado.tex).
+Vejamos o arquivo [`exemplos/abntex2/trabalho-normatizado.tex`](exemplos/abntex2/trabalho-normatizado.tex).
 
 ## Macros
 
@@ -1037,21 +1045,276 @@ Por exemplo, o ambiente a seguir deixa o texto em itálico:
 ### Exemplo e exercício
 
 Temos exemplos no arquivo [`exemplos/macros.tex`](exemplos/macros.tex). A
-seguir, resolver o exercício
-[`exercicios/automatizando.tex`](exercicios/automatizando.tex).
+seguir, resolver o exercício [`exercicios/automatizando.tex`](exercicios/automatizando.tex).
+
+## Linguística
+
+O LaTeX traz uma série de pacotes que ajudam em tarefas de tipografia comuns
+para linguistas. Veremos abaixo como escrever transcrições fonéticas com o IPA
+de maneira fácil; como inserir árvores sintáticas que não são imagens e por
+isso não perdem resolução ao serem impressas; e como inserir exemplos, glosas e
+fazer referências a esses elementos no texto.
+
+### Transcrições fonéticas com o `tipa`
+
+O [`tipa`](https://ctan.org/pkg/tipa) permite que você escreva usando o
+Alfabeto Fonético Internacional (IPA) sem ter que procurar e inserir símbolos a
+partir de uma lista. Tudo o que for escrito dentro do comando `\textipa{}` será
+convertido automaticamente, seguindo uma tabela de referência intuitiva. Por exemplo, para produzir [lĩŋ.ˈgʷis.tɐs], basta digitar:
+
+```latex
+\textipa{l\~\i N.\textprimstress g\super wis.t5s}
+
+```
+
+Alguns exemplos de vogais orais:
+
+```latex
+\textipa{[i e E a O o u]}
+\textipa{[I U 5]}
+```
+
+E vogais nasais:
+
+```latex
+\textipa{\~o}
+\textipa{\~\textschwa}
+\textipa{\~5}
+```
+
+E também algumas vogais do português brasileiro:
+
+```latex
+\textipa{S}
+\textipa{Z}
+\textipa{L}
+\textipa{\textltailn}
+\textipa{N}
+\textipa{\textfishhookr}
+\textipa{\textturnr}
+\textipa{\t{tS}}
+\textipa{\t{dZ}}
+```
+
+Ainda é possível inserir diagramas de vogais de maneira bastante simples,
+usando o pacote `vowel`:
+
+```latex
+\begin{vowel}
+\putcvowel[l]{i}{1}
+\putcvowel[r]{y}{1}
+\putcvowel[l]{e}{2}
+\putcvowel[r]{\o}{2}
+...
+\putcvowel{\textsci\ \textscy}{13}
+\putcvowel{\textupsilon}{14}
+\putcvowel{\textturna}{15}
+\putcvowel{\ae}{16}
+\end{vowel}
+```
+
+Veja a tabela de referência [exemplos/tipachart.pdf](exemplos/tipachart.pdf)
+para aprender como acessar todos os símbolos do IPA.
+
+### Árvores sintáticas com o `forest`
+
+Existem muitos pacotes para a inserção de árvores sintáticas no LaTeX, mas
+provavelmente o melhor e mais poderoso é o
+[`forest`](https://ctan.org/pkg/forest). Para inserir uma árvore, basta iniciar
+o ambiente `forest` e inserir uma sentença com os constituintes delimitados por
+chaves. Ela será convertida automaticamente para uma árvore.
+
+```latex
+\begin{forest}
+  [CP [C] [IP [I] [VP [V] [NP] ] ] ]
+\end{forest}
+```
+
+Por motivos de legibilidade do código, devemos pular linhas e indentar os
+constituintes que estão em níveis mais baixos da árvore (`␣` representa um
+espaço em branco):
+
+```latex
+\begin{forest}
+␣␣␣␣[CP
+␣␣␣␣␣␣[C]
+␣␣␣␣␣␣␣␣[IP
+␣␣␣␣␣␣␣␣␣␣[I]
+␣␣␣␣␣␣␣␣␣␣[VP
+␣␣␣␣␣␣␣␣␣␣␣␣[V]
+␣␣␣␣␣␣␣␣␣␣␣␣[NP]
+␣␣␣␣␣␣␣␣␣␣]
+␣␣␣␣␣␣␣␣]
+␣␣␣␣]
+\end{forest}
+```
+
+A árvore a seguir é um exemplo com todos os nós rotulados e com os nós
+terminais precedidos de linhas. Note como os nós terminais estão marcados como
+constituintes dentro de outros constituintes, por exemplo em `[DP [O menino]]`.
+Note, ainda, que `$_i$` significa que estamos entrando no modo de matemática
+(`$…$`) e inserindo um _i_ subscrito (`_i`):
+
+```latex
+\begin{forest}
+  [IP
+    [DP [O menino$_i$]]
+    [I$'$
+      [I [chegou$_j$]]
+      [VP
+      [V$'$
+        [V [t$_j$]]
+        [DP [t$_i$]]
+      ]
+      ]
+    ]
+  ]
+\end{forest}
+```
+
+É bastante usual omitirmos as linhas que levam aos nós terminais, pois algumas
+pessoas as consideram redundantes. Isso é possível usando uma sintaxe
+ligeiramente diferente. Note que, agora, há uma quebra de linha e apenas um
+constituinte em `[DP\\ O menino]`, por exemplo:
+
+```latex
+\begin{forest}
+  [IP
+    [DP\\ O menino$_i$]
+    [I$'$
+      [I\\ chegou$_j$]
+      [VP
+        [V$'$
+          [V\\ t$_j$]
+          [DP\\ t$_i$]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+```
+
+O pacote `forest` é baseado no
+[PGF/TikZ](https://en.wikipedia.org/wiki/PGF/TikZ), um conjunto de poderosas
+bibliotecas gráficas para o LaTeX. Como consequência, as árvores aceitam uma
+série de customizações que não discutiremos no momento. Porém, vejamos um
+exemplo para ilustrar o que se pode esperar encontrar no manual do `forest`. A
+árvore a seguir não tem todos os nós rotulados e isso causa um comportamento
+estranho quando a árvore é disposta na página. No entanto, podemos usar a opção
+`for tree = nice empty nodes` para remediar a situação:
+
+```latex
+\begin{forest}
+  for tree=nice empty nodes
+  [
+    [
+      [a]
+      [menina]
+    ]
+    [
+      [comeu]
+        [
+          [o]
+          [bolo]
+        ]
+    ]
+  ]
+\end{forest}
+```
+
+Essa opção, porque se encontra dentro do ambiente `forest`, irá se aplicar
+somente para a árvore em questão. Veja o manual do pacote para mais opções.
+
+Às vezes, desejamos omitir informações irrelevantes em alguma árvore.
+Explicitamos nossa decisão desenhando um triângulo sobre o constituinte que não
+foi esmiuçado. Para isso, usamos a opção `roof`, que se aplica a um
+constituinte em nossa árvore. Veja no exemplo a seguir, onde o constituinte
+_chutada pelo menino_ está simplificado:
+
+```latex
+\begin{forest}
+  [IP
+    [DP\\ a bola]
+    [I$'$
+      [I\\ foi]
+      [VP
+        [V$'$
+          [V]
+          [PartP [chutada pelo\\ menino, roof]]
+        ]
+      ]
+    ]
+  ]
+\end{forest}
+
+
+```
+
+### Exemplos numerados e glosas com o `linguex`
+
+Outra tarefa especialmente comum para o linguista é apresentar seus dados em
+formato de exemplos de sentenças, que são numeradas à esquerda. Não existe uma
+implementação perfeita em LaTeX para isso, pois cada uma tem suas vantagens e
+defeitos. O [`linguex`](https://ctan.org/pkg/linguex) é um desses pacotes com
+suporte a exemplos e glosas. Você pode aprender sobre outros pacotes para
+linguistas nesse [artigo da WikiBooks](https://en.wikibooks.org/wiki/LaTeX/Linguistics),
+caso o `linguex` não tenha as funcionalidades de que precisa.
+
+Escolhemos o `linguex` pois sua sintaxe é relativamente simples e poderosa.
+Vejamos alguns exemplos básicos:
+
+```latex
+\ex. Chegou o menino.
+
+\ex. Chegou a carta.
+
+\ex.* A chegou carta.
+
+```
+
+Sempre deixe uma linha em branco para indicar o fim de um exemplo. É possível
+mostrar também subexemplos:
+
+```latex
+\ex.
+  \a. Chegou o menino.
+  \b. O menino chegou.
+
+```
+
+Novamente, certifique-se de colocar uma linha em branco ao fim dos exemplos.
+
+Também é possível escrever glosas usando o comando `\exg.`. As palavras serão
+alinhadas automaticamente:
+
+```latex
+\exg.
+  Gila abur-u-n ferma hamišaluǧ güǧüna amuq’-da-č.\\
+  now they-OBL-GEN farm forever behind stay-FUT-NEG\\
+  ``Now their farm will not stay behind forever.''
+
+```
+
+#### Referências cruzadas
+
+Já vimos que os comandos `\label` e `\ref` permitem criar referências que são
+automaticamente numeradas e atualizadas pelo LaTeX. Esses comandos também
+funcionam nos exemplos e glosas do `linguex`:
+
+
+```latex
+  \ex.\label{ex:gram} Chegou o menino.
+
+  \ex.*\label{ex:agram} A chegou carta.
+
+  Em~\ref{ex:gram}, temos uma sentença bem formada, ao contrário
+  de~\ref{ex:agram}, que é uma sentença agramatical.
+```
 
 ## Referências
 
-- [Sobre a tipografia do *TAoCP* antes do TeX]
-  (https://www.reddit.com/r/compsci/comments/2ksmde/what_did_the_art_of_computer_programming_look/)
+- [Sobre a tipografia do *TAoCP* antes do TeX](https://www.reddit.com/r/compsci/comments/2ksmde/what_did_the_art_of_computer_programming_look/)
 - [Guia do Wikibooks](https://en.wikibooks.org/wiki/LaTeX)
-- [LaTeX Tutorials: a Primer]
-  (https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf)
-- *Elementos do Estilo Tipográfico versão 3.0*, por Robert Bringhurst. Cosac
-  Naify, 2008.
-- [*A beginner’s introduction to typesetting with LaTeX*]
-  (https://www.ctan.org/pkg/beginlatex), por Peter Flynn
-- [Writing your own class (ShareLaTeX)]
-  (https://www.sharelatex.com/learn/Writing_your_own_class)
-- [Creating your own class (Wikibooks)]
-  (https://en.wikibooks.org/wiki/LaTeX/Creating_Packages#Creating_your_own_class)
+- [LaTeX Tutorials: a Primer](https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf)
+- *Elementos do Estilo Tipográfico versão 3.0*, por Robert Bringhurst. Cosac Naify, 2008.
+- [*A beginner’s introduction to typesetting with LaTeX*](https://www.ctan.org/pkg/beginlatex), por Peter Flynn

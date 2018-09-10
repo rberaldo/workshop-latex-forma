@@ -1,2 +1,444 @@
 % Pacotes úteis para linguistas %%%%%%%%%%%%%%
-\section{Pacotes para linguistas}
+\section{Linguística}
+
+% tipa
+% baseado em https://social.stoa.usp.br/articles/0029/0658/APRES-tipa.pdf
+\begin{frame}
+  \frametitle{Linguística: transcrições com o \latexcode{tipa}}
+  \huge
+  O IPA é facilmente acessível\\ usando o pacote \latexcode{tipa}
+\end{frame}
+
+% \textipa{}, {\tipaencoding} e ambiente IPA
+\begin{frame}[fragile]
+  \frametitle{Linguística: \latexcode{tipa}}
+  \huge
+
+  Três modos de acessar:
+  \begin{onlyenv}<1>
+    \begin{minted}[autogobble,breaklines]{latex}
+      \textipa{…}
+    \end{minted}
+  \end{onlyenv}
+
+  \begin{onlyenv}<2>
+    \begin{minted}[autogobble,breaklines]{latex}
+      {\tipaencoding …}
+    \end{minted}
+  \end{onlyenv}
+
+  \begin{onlyenv}<3>
+    o ambiente \latexcode{IPA}
+  \end{onlyenv}
+\end{frame}
+
+% Exemplos básicos
+\begin{frame}[fragile]
+  \frametitle{Linguística: exemplo com o \latexcode{tipa}}
+  \huge
+
+  \begin{minted}[autogobble,fontsize=\large,breaklines]{latex}
+    \textipa{l\~\i N.\textprimstress g\super wis.t5s}
+  \end{minted}
+
+  \textipa{l\~\i N.\textprimstress g\super wis.t5s}
+\end{frame}
+
+% Vogais orais do ptbr
+\begin{frame}[fragile]
+  \frametitle{Linguística: vogais orais com o \latexcode{tipa}}
+  \huge
+
+  \begin{minted}[autogobble,fontsize=\Large,breaklines]{latex}
+    \textipa{[i e E a O o u]}
+
+    \textipa{[I U 5]}
+  \end{minted}
+
+  \textipa{[i e E a O o u]}
+
+  \textipa{[I U 5]}
+\end{frame}
+
+% Vogais nasais
+\begin{frame}[fragile]
+  \frametitle{Linguística: vogais nasais com o \latexcode{tipa}}
+  \Large
+  \setlength{\tabcolsep}{12pt}
+  \begin{tabular}{rl}
+    \latexcode{\textipa{\~o}}          & \textipa{\~o} \\
+    \latexcode{\textipa{\~\textschwa}} & \textipa{\~\textschwa} \\
+    \latexcode{\textipa{\~5}}          & \textipa{\~5}
+  \end{tabular}
+\end{frame}
+
+% Consoantes
+\begin{frame}
+  \frametitle{Linguística: consoantes com o \latexcode{tipa}}
+  \Large
+  \setlength{\tabcolsep}{12pt}
+  \begin{tabular}{rl}
+    \latexcode{\textipa{S}}              & \textipa{S} \\
+    \latexcode{\textipa{Z}}              & \textipa{Z} \\
+    \latexcode{\textipa{L}}              & \textipa{L} \\
+    \latexcode{\textipa{\textltailn}}    & \textipa{ \textltailn} \\
+    \latexcode{\textipa{N}}              & \textipa{N} \\
+    \latexcode{\textipa{\textfishhookr}} & \textipa{\textfishhookr} \\
+    \latexcode{\textipa{\textturnr}}     & \textipa{\textturnr} \\
+    \latexcode{\textipa{\t{tS}}}         & \textipa{\t{tS}} \\
+    \latexcode{\textipa{\t{dZ}}}         & \textipa{\t{dZ}}
+  \end{tabular}
+\end{frame}
+
+% - vowel chart
+\begin{frame}[fragile]
+  \frametitle{Linguística: diagrama de vogais com o \latexcode{tipa}}
+  \large
+  \begin{minipage}{.45\textwidth}
+    \begin{minted}[autogobble,fontsize=\tiny,breaklines]{latex}
+      \begin{vowel}
+        \putcvowel[l]{i}{1}
+        \putcvowel[r]{y}{1}
+        \putcvowel[l]{e}{2}
+        \putcvowel[r]{\o}{2}
+        …
+        \putcvowel{\textsci\ \textscy}{13}
+        \putcvowel{\textupsilon}{14}
+        \putcvowel{\textturna}{15}
+        \putcvowel{\ae}{16}
+      \end{vowel}
+    \end{minted}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{.45\textwidth}
+    \begin{vowel}
+      \putcvowel[l]{i}{1}
+      \putcvowel[r]{y}{1}
+      \putcvowel[l]{e}{2}
+      \putcvowel[r]{\o}{2}
+      \putcvowel[l]{\textepsilon}{3}
+      \putcvowel[r]{\oe}{3}
+      \putcvowel[l]{a}{4}
+      \putcvowel[r]{\textscoelig}{4}
+      \putcvowel[l]{\textscripta}{5}
+      \putcvowel[r]{\textturnscripta}{5}
+      \putcvowel[l]{\textturnv}{6}
+      \putcvowel[r]{\textopeno}{6}
+      \putcvowel[l]{\textramshorns}{7}
+      \putcvowel[r]{o}{7}
+      \putcvowel[l]{\textturnm}{8}
+      \putcvowel[r]{u}{8}
+      \putcvowel[l]{\textbari}{9}
+      \putcvowel[r]{\textbaru}{9}
+      \putcvowel[l]{\textreve}{10}
+      \putcvowel[r]{\textbaro}{10}
+      \putcvowel{\textschwa}{11}
+      \putcvowel[l]{\textrevepsilon}{12}
+      \putcvowel[r]{\textcloserevepsilon}{12}
+      \putcvowel{\textsci\ \textscy}{13}
+      \putcvowel{\textupsilon}{14}
+      \putcvowel{\textturna}{15}
+      \putcvowel{\ae}{16}
+    \end{vowel}
+  \end{minipage}
+\end{frame}
+
+% Referência para o tipa
+\begin{frame}
+  \frametitle{Linguística: referência do \latexcode{tipa}}
+  \huge
+  Veja \filename{exemplos/tipachart.pdf} para um resumo de como acessar os
+  caracteres do~IPA.
+\end{frame}
+
+% forest
+\begin{frame}
+  \frametitle{Linguística: árvores sintáticas com o \latexcode{forest}}
+  \huge
+  Também é possível desenhar árvores sintáticas usando o pacote
+  \latexcode{forest}.
+\end{frame}
+
+% Árvore simples
+\begin{frame}[fragile]
+  \frametitle{Linguística: árvores simples com o \latexcode{forest}}
+  \Large
+  \begin{columns}
+    \begin{column}{.45\textwidth}
+      \begin{minted}[autogobble,fontsize=\large,showspaces,breaklines]{latex}
+        \begin{forest}
+          [CP
+            [C]
+              [IP
+                [I]
+                [VP 
+                  [V]
+                  [NP]
+                ]
+              ]
+          ]
+        \end{forest}
+      \end{minted}
+    \end{column}
+    \hfill
+    \begin{column}{.45\textwidth}
+      \begin{forest}
+        [CP
+          [C]
+            [IP
+              [I]
+              [VP 
+                [V]
+                [NP]
+              ]
+            ]
+        ]
+      \end{forest}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Terminais com e sem linhas
+\begin{frame}[fragile]
+  \frametitle{Linguística: árvores com o \latexcode{forest}}
+  \large
+  \begin{columns}
+    \begin{column}{.45\textwidth}
+      \begin{minted}[autogobble,fontsize=\small,breaklines]{latex}
+        \begin{forest}
+          [IP
+            [DP [O menino$_i$]]
+            [I$'$
+              [I [chegou$_j$]]
+              [VP
+                [V$'$
+                  [V [t$_j$]]
+                  [DP [t$_i$]]
+                ]
+              ]
+            ]
+          ]
+        \end{forest}
+      \end{minted}
+    \end{column}
+    \hfill
+    \begin{column}{.45\textwidth}
+      \begin{forest}
+        [IP
+          [DP [O menino$_i$]]
+          [I$'$
+            [I [chegou$_j$]]
+            [VP
+              [V$'$
+                [V [t$_j$]]
+                [DP [t$_i$]]
+              ]
+            ]
+          ]
+        ]
+      \end{forest}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Linguística: árvores com o \latexcode{forest}}
+  \large
+  \begin{columns}
+    \begin{column}{.45\textwidth}
+      \begin{minted}[autogobble,fontsize=\small,breaklines]{latex}
+        \begin{forest}
+          [IP
+            [DP [O menino$_i$]]
+            [I$'$
+              [I [chegou$_j$]]
+              [VP
+                [V$'$
+                  [V [t$_j$]]
+                  [DP [t$_i$]]
+                ]
+              ]
+            ]
+          ]
+        \end{forest}
+      \end{minted}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{forest}
+        [IP
+          [DP\\ O menino$_i$]
+          [I$'$
+            [I\\ chegou$_j$]
+            [VP
+              [V$'$
+                [V\\ t$_j$]
+                [DP\\ t$_i$]
+              ]
+            ]
+          ]
+        ]
+      \end{forest}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% sem rótulos
+\begin{frame}[fragile]
+  \frametitle{Linguística: árvores com o \latexcode{forest}}
+  \small
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{minted}[autogobble,fontsize=\footnotesize,breaklines]{latex}
+        \begin{forest}
+          for tree=nice empty nodes
+          [
+            [
+              [a]
+              [menina]
+            ]
+            [
+              [comeu]
+                [
+                  [o]
+                  [bolo]
+                ]
+            ]
+          ]
+        \end{forest}
+      \end{minted}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{forest}
+        for tree=nice empty nodes
+        [
+          [
+            [a]
+            [menina]
+          ]
+          [
+            [comeu]
+              [
+                [o]
+                [bolo]
+              ]
+          ]
+        ]
+      \end{forest}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Triângulos para omitir detalhes
+\begin{frame}[fragile]
+  \frametitle{Linguística: árvores com o \latexcode{forest}}
+  \small
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{minted}[autogobble,fontsize=\scriptsize,breaklines]{latex}
+        \begin{forest}
+          [IP
+            [DP\\ a bola]
+            [I$'$
+              [I\\ foi]
+              [VP
+                [V$'$
+                  [V]
+                  [PartP [chutada pelo menino, roof]]
+                ]
+              ]
+            ]
+          ]
+        \end{forest}
+      \end{minted}
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{forest}
+        [IP
+          [DP\\ a bola]
+          [I$'$
+            [I\\ foi]
+            [VP
+              [V$'$
+                [V]
+                [PartP [chutada pelo\\ menino, roof]]
+              ]
+            ]
+          ]
+        ]
+      \end{forest}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% linguex
+\begin{frame}
+  \frametitle{Linguística: exemplos com o \latexcode{linguex}}
+  \huge
+  Exemplos e glosas são facilmente representados usando o pacote
+  \latexcode{linguex}.
+\end{frame}
+
+% Exemplos numerados
+\begin{frame}[fragile]
+  \frametitle{Linguística: exemplos com o \latexcode{linguex}}
+  \large
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \begin{minted}[autogobble,breaklines]{latex}
+        \ex. Chegou o menino.
+
+        \ex. Chegou a carta.
+
+        \ex.* A chegou carta.
+      \end{minted}
+    \end{column} 
+    \begin{column}{.5\textwidth}
+      \ex. Chegou o menino.\par
+      \ex. Chegou a carta.\par
+      \ex.* A chegou carta.\par
+    \end{column} 
+  \end{columns}
+\end{frame}
+
+% Glosas (tirada de https://www.eva.mpg.de/lingua/resources/glossing-rules.php)
+\begin{frame}[fragile]
+  \frametitle{Linguística: exemplos com o \latexcode{linguex}}
+  \small
+
+  \begin{minted}[autogobble,breaklines]{latex}
+    \exg.
+    Gila abur-u-n ferma hamišaluǧ güǧüna amuq’-da-č.\\
+    now they-OBL-GEN farm forever behind stay-FUT-NEG\\
+    ``Now their farm will not stay behind forever.''
+  \end{minted}
+
+  \exg.
+  Gila abur-u-n ferma hamišaluǧ güǧüna amuq’-da-č.\\
+  now they-OBL-GEN farm forever behind stay-FUT-NEG\\
+  ``Now their farm will not stay behind forever.''
+
+\end{frame}
+
+% Referencias cruzadas
+\begin{frame}[fragile]
+  \frametitle{Linguística: exemplos com o \latexcode{linguex}}
+  \normalsize
+
+  \begin{minted}[autogobble,fontsize=\small,breaklines]{latex}
+    \ex.\label{ex:gram} Chegou o menino.
+
+    \ex.*\label{ex:agram} A chegou carta.
+
+    Em~\ref{ex:gram}, temos uma sentença bem formada, ao contrário de~\ref{ex:agram}, que é uma sentença agramatical.
+  \end{minted}
+
+  \vfill
+
+  \ex.\label{ex:gram} Chegou o menino.
+
+  \ex.*\label{ex:agram} A chegou carta.
+
+  Em~\ref{ex:gram}, temos uma sentença bem formada, ao contrário
+  de~\ref{ex:agram}, que é uma sentença agramatical.
+
+\end{frame}
