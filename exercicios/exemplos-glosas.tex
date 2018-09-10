@@ -1,0 +1,33 @@
+%
+% exemplos-glosas.tex
+%
+% Workshop de LaTeX
+%
+% Problema:
+% - Modifique os exemplos abaixo de modo que ambas estejam contidas no
+%   mesmo exemplo, isto é, de modo que sejam subexemplos.
+% - Agora, modifique o texto para fazer referência às duas sentenças,
+%   usando para isso os comandos \label e \ref. Reescreva a sentença como achar
+%   melhor para acomodar as referências.
+% - Adicione uma terceira sentença entre as duas sentenças já existentes,
+%   fazendo as modificações necessárias. Veja como a numeração muda
+%   automaticamente. Explore: faz diferença usar \b. ou \c.?
+%
+
+\documentclass[a4paper]{article}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+  \setdefaultlanguage{brazil}
+\usepackage{linguex}
+
+\begin{document}
+\frenchspacing
+
+A ordem nas línguas é fundamental. Aqui temos duas sentenças de exemplo, uma
+gramatical e outra agramatical:
+
+\ex. O João e a Maria foram ao parque.
+
+\ex.* Foram parque ao o João a Maria e.
+
+\end{document}

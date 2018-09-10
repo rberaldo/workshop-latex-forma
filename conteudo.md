@@ -1060,7 +1060,8 @@ fazer referências a esses elementos no texto.
 O [`tipa`](https://ctan.org/pkg/tipa) permite que você escreva usando o
 Alfabeto Fonético Internacional (IPA) sem ter que procurar e inserir símbolos a
 partir de uma lista. Tudo o que for escrito dentro do comando `\textipa{}` será
-convertido automaticamente, seguindo uma tabela de referência intuitiva. Por exemplo, para produzir [lĩŋ.ˈgʷis.tɐs], basta digitar:
+convertido automaticamente, seguindo uma tabela de referência intuitiva. Por
+exemplo, para produzir [lĩŋ.ˈgʷis.tɐs], basta digitar:
 
 ```latex
 \textipa{l\~\i N.\textprimstress g\super wis.t5s}
@@ -1136,16 +1137,16 @@ espaço em branco):
 
 ```latex
 \begin{forest}
-␣␣␣␣[CP
-␣␣␣␣␣␣[C]
-␣␣␣␣␣␣␣␣[IP
-␣␣␣␣␣␣␣␣␣␣[I]
-␣␣␣␣␣␣␣␣␣␣[VP
-␣␣␣␣␣␣␣␣␣␣␣␣[V]
-␣␣␣␣␣␣␣␣␣␣␣␣[NP]
-␣␣␣␣␣␣␣␣␣␣]
+␣␣[CP
+␣␣␣␣[C]
+␣␣␣␣␣␣[IP
+␣␣␣␣␣␣␣␣[I]
+␣␣␣␣␣␣␣␣[VP
+␣␣␣␣␣␣␣␣␣␣[V]
+␣␣␣␣␣␣␣␣␣␣[NP]
 ␣␣␣␣␣␣␣␣]
-␣␣␣␣]
+␣␣␣␣␣␣]
+␣␣]
 \end{forest}
 ```
 
@@ -1246,8 +1247,6 @@ _chutada pelo menino_ está simplificado:
     ]
   ]
 \end{forest}
-
-
 ```
 
 ### Exemplos numerados e glosas com o `linguex`
