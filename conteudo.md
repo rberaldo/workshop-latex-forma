@@ -1117,6 +1117,11 @@ usando o pacote `vowel`:
 Veja a tabela de referência [exemplos/tipachart.pdf](exemplos/tipachart.pdf)
 para aprender como acessar todos os símbolos do IPA.
 
+### Exemplo e exercício
+
+Temos exemplos no arquivo [`exemplos/linguistica.tex`](exemplos/linguistica.tex). A
+seguir, resolver o exercício [`exercicios/transcricao.tex`](exercicios/transcricao.tex).
+
 ### Árvores sintáticas com o `forest`
 
 Existem muitos pacotes para a inserção de árvores sintáticas no LaTeX, mas
@@ -1249,6 +1254,11 @@ _chutada pelo menino_ está simplificado:
 \end{forest}
 ```
 
+### Exemplo e exercício
+
+Temos exemplos no arquivo [`exemplos/linguistica.tex`](exemplos/linguistica.tex). A
+seguir, resolver o exercício [`exercicios/arvores.tex`](exercicios/arvores.tex).
+
 ### Exemplos numerados e glosas com o `linguex`
 
 Outra tarefa especialmente comum para o linguista é apresentar seus dados em
@@ -1309,6 +1319,11 @@ funcionam nos exemplos e glosas do `linguex`:
   Em~\ref{ex:gram}, temos uma sentença bem formada, ao contrário
   de~\ref{ex:agram}, que é uma sentença agramatical.
 ```
+
+### Exemplo e exercício
+
+Temos exemplos no arquivo [`exemplos/linguistica.tex`](exemplos/linguistica.tex). A
+seguir, resolver o exercício [`exercicios/exemplos-glosas.tex`](exercicios/exemplos-glosas.tex).
 
 ## Referências
 
