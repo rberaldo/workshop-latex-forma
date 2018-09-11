@@ -36,13 +36,22 @@
   pdfencoding=unicode % garante unicode no sumário do PDF
 }
 
-%%% Style changes
+%%% Customizações de fonte do cgloss4e
+\renewcommand{\eachwordone}{\textsf}
+\renewcommand{\eachwordtwo}{\textsf}
+
+%%% Fonte do TIPA
+\DeclareTextFontCommand{\textipa}{%
+  \fontfamily{cmss}\tipaencoding
+}
+\renewenvironment{IPA}{\fontfamily{cmss}\tipaencoding}{}
+
+%%% Mudanças no estilo
 \usetheme[subsectionpage=progressbar,numbering=none]{metropolis}
 \beamertemplatenavigationsymbolsempty
 
-%%% cgloss4e customizations
-\renewcommand{\eachwordone}{\textsf}
-\renewcommand{\eachwordtwo}{\textsf}
+%%% Profundidade do sumário
+\setcounter{tocdepth}{1}
 
 %%% Macros
 \newcommand{\filename}[1]{\texttt{#1}}
@@ -70,9 +79,14 @@
 \begin{frame}
   \frametitle{Conteúdo}
   \setbeamertemplate{section in toc}[sections numbered]
-  \begin{multicols}{2}
-    \tableofcontents
-  \end{multicols}
+  \begin{columns}[t]
+    \begin{column}{.5\textwidth}
+      \tableofcontents[sections={1-10}]
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \tableofcontents[sections={11-19}]
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % Inputs
