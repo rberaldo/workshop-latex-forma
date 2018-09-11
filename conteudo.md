@@ -1312,12 +1312,12 @@ funcionam nos exemplos e glosas do `linguex`:
 
 
 ```latex
-  \ex.\label{ex:gram} Chegou o menino.
+\ex.\label{ex:gram} Chegou o menino.
 
-  \ex.*\label{ex:agram} A chegou carta.
+\ex.*\label{ex:agram} A chegou carta.
 
-  Em~\ref{ex:gram}, temos uma sentença bem formada, ao contrário
-  de~\ref{ex:agram}, que é uma sentença agramatical.
+Em~\ref{ex:gram}, temos uma sentença bem formada, ao contrário
+de~\ref{ex:agram}, que é uma sentença agramatical.
 ```
 
 ### Exemplo e exercício

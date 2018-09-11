@@ -1,6 +1,7 @@
 % Pacotes úteis para linguistas %%%%%%%%%%%%%%
 \section{Linguística}
 
+\subsection{Fonética}
 % tipa
 % baseado em https://social.stoa.usp.br/articles/0029/0658/APRES-tipa.pdf
 \begin{frame}
@@ -38,10 +39,13 @@
   \huge
 
   \begin{minted}[autogobble,fontsize=\large,breaklines]{latex}
-    \textipa{l\~\i N.\textprimstress g\super wis.t5s}
+    \textipa{l\~\i N."g\super wis.t5s}
   \end{minted}
 
-  \textipa{l\~\i N.\textprimstress g\super wis.t5s}
+  \textipa{l\~\i N."g\super wis.t5s}%
+  \footnote{Exemplos retirados de
+  \url{https://social.stoa.usp.br/latex-para-linguistas/}}
+
 \end{frame}
 
 % Vogais orais do ptbr
@@ -73,7 +77,7 @@
 \end{frame}
 
 % Consoantes
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Linguística: consoantes com o \latexcode{tipa}}
   \Large
   \setlength{\tabcolsep}{12pt}
@@ -147,7 +151,7 @@
 \begin{frame}
   \frametitle{Linguística: referência do \latexcode{tipa}}
   \huge
-  Veja \filename{exemplos/tipachart.pdf} para um resumo de como acessar os
+  Veja \filename{exem\-plos/tipa\-chart.pdf} para um resumo de como acessar os
   caracteres do~IPA.
 \end{frame}
 
@@ -155,23 +159,33 @@
 \begin{frame}
   \frametitle{Linguística: exemplos do \latexcode{tipa}}
   \huge
-  Vejamos \filename{exemplos/linguistica.tex}.
+  Vejamos \filename{exem\-plos/lin\-guis\-ti\-ca.tex}
 \end{frame}
 
 % Vamos resolver um exercício
 \begin{frame}
   \frametitle{Linguística: exercício do \latexcode{tipa}}
   \huge
-  Resolver \filename{exercicios/transcricao.tex}.
+  Resolver \filename{exercicios/transcricao.tex}
 \end{frame}
 
-% todo: add exercise
+% Copiar essa transcrição
 \begin{frame}
   \frametitle{Linguística: exercício do \latexcode{tipa}}
   \huge
-  Reproduzir % todo: add transcription
+  Reproduzir:
+
+  \textipa{
+    \~w
+    abaka"Si
+    "pERtu
+    d\~w
+    ZoR"na\textbeltl
+  }
+
 \end{frame}
 
+\subsection{Árvores sintáticas}
 % forest
 \begin{frame}
   \frametitle{Linguística: árvores sintáticas com o \latexcode{forest}}
@@ -192,7 +206,7 @@
             [C]
               [IP
                 [I]
-                [VP 
+                [VP
                   [V]
                   [NP]
                 ]
@@ -208,7 +222,7 @@
           [C]
             [IP
               [I]
-              [VP 
+              [VP
                 [V]
                 [NP]
               ]
@@ -395,23 +409,40 @@
 \begin{frame}
   \frametitle{Linguística: árvores com o \latexcode{forest}}
   \huge
-  Vejamos \filename{exemplos/linguistica.tex}.
+  Vejamos \filename{exemplos/linguistica.tex}
 \end{frame}
 
 % Vamos resolver um exercício
 \begin{frame}
   \frametitle{Linguística: exercício do \latexcode{forest}}
   \huge
-  Resolver \filename{exercicios/arvores.tex}.
+  Resolver \filename{exercicios/arvores.tex}
 \end{frame}
 
-% todo: add exercise
+% Copiar essa árvore
 \begin{frame}
   \frametitle{Linguística: árvores com o \latexcode{forest}}
-  \huge
-  Reproduzir % todo: add tree
+  \centering\vfill
+
+  Reproduzir:
+  \begin{forest}
+    [IP
+      [DP\\ pro]
+      [I$'$
+        [I\\ caiu$_i$]
+        [VP
+          [V
+            [V\\ t$_i$]
+            [DP\\ [o vaso, roof]]
+          ]
+        ]
+      ]
+    ]
+  \end{forest}
+
 \end{frame}
 
+\subsection{Exemplos, glosas e referências cruzadas}
 % linguex
 \begin{frame}
   \frametitle{Linguística: exemplos com o \latexcode{linguex}}
@@ -433,18 +464,18 @@
 
         \ex.* A chegou carta.
       \end{minted}
-    \end{column} 
+    \end{column}
     \begin{column}{.5\textwidth}
       \ex. Chegou o menino.\par
       \ex. Chegou a carta.\par
       \ex.* A chegou carta.\par
-    \end{column} 
+    \end{column}
   \end{columns}
 \end{frame}
 
-% Glosas (tirada de https://www.eva.mpg.de/lingua/resources/glossing-rules.php)
+% Glosas (de https://www.eva.mpg.de/lingua/resources/glossing-rules.php)
 \begin{frame}[fragile]
-  \frametitle{Linguística: exemplos com o \latexcode{linguex}}
+  \frametitle{Linguística: glosas com o \latexcode{linguex}}
   \small
 
   \begin{minted}[autogobble,breaklines]{latex}
@@ -457,13 +488,15 @@
   \exg.
   Gila abur-u-n ferma hamišaluǧ güǧüna amuq’-da-č.\\
   now they-OBL-GEN farm forever behind stay-FUT-NEG\\
-  ``Now their farm will not stay behind forever.''
+  ``Now their farm will not stay behind forever.''%
+  \footnote{Retirada de
+  \url{https://www.eva.mpg.de/lingua/resources/glossing-rules.php}}
 
 \end{frame}
 
 % Referencias cruzadas
 \begin{frame}[fragile]
-  \frametitle{Linguística: exemplos com o \latexcode{linguex}}
+  \frametitle{Linguística: referências cruzadas com o \latexcode{linguex}}
   \normalsize
 
   \begin{minted}[autogobble,fontsize=\small,breaklines]{latex}
@@ -489,12 +522,12 @@
 \begin{frame}
   \frametitle{Linguística: exemplos do \latexcode{linguex}}
   \huge
-  Vejamos \filename{exemplos/linguistica.tex}.
+  Vejamos \filename{exemplos/linguistica.tex}
 \end{frame}
 
 % Vamos resolver um exercício
 \begin{frame}
   \frametitle{Linguística: exercício do \latexcode{linguex}}
   \huge
-  Resolver \filename{exercicios/exemplos-glosas.tex}.
+  Resolver \filename{exercicios/exemplos-glosas.tex}
 \end{frame}
