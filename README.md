@@ -1,4 +1,4 @@
-# Workshop da LaTeX no IEL (20 e 20 de set/2018)
+# Workshop de LaTeX no ForMA
 
 O LaTeX (/ˈlɑːtɛx/ ou /ˈlɑːtɛk/) é um processador de textos. Diferentemente do
 Word ou LibreOffice Write, no entanto, o usuário não edita o texto visualmente,
